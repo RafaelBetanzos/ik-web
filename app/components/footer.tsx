@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-export default function Footer(dark: boolean = true) {
+export default function Footer() {
   return (
     <footer className="bg-stone-700 py-36">
       <div className="container mx-auto px-8 xl:px-48">
