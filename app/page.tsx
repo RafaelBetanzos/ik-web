@@ -18,19 +18,15 @@ export default function Home() {
   });
 
   const [loading, setLoading] = useState(true);
+  const [loadCount, setLoadCount] = useState(0);
 
-  useEffect(() => {
-    const onPageLoad = () => {
+  const setVideoLoaded = () => {
+    setLoadCount(loadCount + 1);
+
+    if (loadCount >= 2) {
       setLoading(false);
-    };
-
-    if (document.readyState === "complete") {
-      onPageLoad();
-    } else {
-      window.addEventListener("load", onPageLoad);
-      return () => window.removeEventListener("load", onPageLoad);
     }
-  }, []);
+  };
 
   if (loading) {
     return (
@@ -68,6 +64,9 @@ export default function Home() {
               muted
               loop
               src={"/assets/videos/main.mp4"}
+              onLoadedData={() => {
+                setVideoLoaded();
+              }}
             />
           </div>
           <div className="mx-auto max-w-6xl py-[35vh] lg:py-[60vh]">
@@ -152,6 +151,9 @@ export default function Home() {
           muted
           loop
           src={"/assets/videos/tamarindo.mp4"}
+          onLoadedData={() => {
+            setVideoLoaded();
+          }}
         />
         <div className="relative h-full bg-gradient-to-b from-black/0 to-amber-900/50 p-12 lg:p-36">
           <div className="container mx-auto">
