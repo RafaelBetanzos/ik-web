@@ -17,31 +17,6 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  const [loading, setLoading] = useState(true);
-  const [loadCount, setLoadCount] = useState(0);
-
-  const setVideoLoaded = () => {
-    setLoadCount(loadCount + 1);
-
-    if (loadCount >= 2) {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <main>
-        <div className="background-animate flex h-screen w-full items-center justify-center bg-stone-700 bg-gradient-to-r from-stone-800 via-stone-800 to-stone-800">
-          <img
-            src="/assets/images/logo.svg"
-            alt=""
-            className="w-60 animate-pulse invert"
-          />
-        </div>
-      </main>
-    );
-  }
-
   return (
     <main>
       <NavBar dark={scrollPos > 0} />
@@ -64,9 +39,7 @@ export default function Home() {
               muted
               loop
               src={"/assets/videos/main.mp4"}
-              onLoadedData={() => {
-                setVideoLoaded();
-              }}
+              poster={"/assets/videos/main.png"}
             />
           </div>
           <div className="mx-auto max-w-6xl py-[35vh] lg:py-[60vh]">
@@ -151,9 +124,7 @@ export default function Home() {
           muted
           loop
           src={"/assets/videos/tamarindo.mp4"}
-          onLoadedData={() => {
-            setVideoLoaded();
-          }}
+          poster={"/assets/videos/tamarindo.png"}
         />
         <div className="relative h-full bg-gradient-to-b from-black/0 to-amber-900/50 p-12 lg:p-36">
           <div className="container mx-auto">
