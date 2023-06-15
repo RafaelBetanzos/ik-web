@@ -10,3 +10,22 @@ a {
 a:hover {
   opacity: 1;
 }
+
+
+.background-animate {
+    background-size: 400%;
+
+    -webkit-animation: GradientBackgroundAnimation 3s ease infinite;
+    -moz-animation: GradientBackgroundAnimation 3s ease infinite;
+    animation: GradientBackgroundAnimation 3s ease infinite;
+  }
+
+  @keyframes GradientBackgroundAnimation {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }

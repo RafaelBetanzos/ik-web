@@ -17,6 +17,35 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setLoading(false);
+    };
+
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      return () => window.removeEventListener("load", onPageLoad);
+    }
+  }, []);
+
+  if (loading) {
+    return (
+      <main>
+        <div className="background-animate flex h-screen w-full items-center justify-center bg-stone-700 bg-gradient-to-r from-stone-800 via-stone-800 to-stone-800">
+          <img
+            src="/assets/images/logo.svg"
+            alt=""
+            className="w-60 animate-pulse invert"
+          />
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <NavBar dark={scrollPos > 0} />
