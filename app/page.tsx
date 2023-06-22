@@ -224,6 +224,38 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+      <section className="pt-8">
+        <div className="h-hero container relative mx-auto overflow-hidden">
+          <div
+            style={{
+              backgroundImage: `url("assets/images/photos/cosmetica.jpg")`,
+            }}
+            className="absolute mt-16 h-full w-full bg-cover"
+          ></div>
+          <div className="absolute">
+            <h1 className="font-display ml-8 mt-8 inline-block bg-stone-800/60 p-8 text-6xl text-amber-200 shadow-2xl backdrop-blur-sm">
+              Cosmética Natural
+            </h1>
+          </div>
+          <div className="absolute bottom-8 right-0 w-2/3 rounded-sm bg-stone-200 bg-opacity-90 p-16 shadow-xl backdrop-blur-sm">
+            <p className="font-display-serif text-xl leading-relaxed text-stone-700">
+              Explore nuestra completa gama de productos cosméticos naturales,
+              desarrollados con rigurosidad científica y formulados con
+              ingredientes de origen vegetal. Nuestros productos se basan en
+              estudios científicos que respaldan sus propiedades beneficiosas
+              para la piel. Mediante el uso de extractos botánicos y principios
+              activos naturales, ofrecemos soluciones efectivas y saludables
+              para el cuidado de la piel, preservando su equilibrio natural y
+              promoviendo una apariencia radiante de manera sostenible.
+            </p>
+            <div className="text-right">
+              <a href="#">
+                Ver más<span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="relative isolate mx-auto flex flex-col justify-center overflow-hidden pb-24 text-center shadow-xl">
         {/* <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
