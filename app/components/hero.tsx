@@ -14,7 +14,7 @@ export default function Hero(props: HeroProps) {
         style={{
           backgroundImage: `url("${props.imgUrl}")`,
         }}
-        initial={{ backgroundSize: "150%", opacity: 0 }}
+        initial={{ backgroundSize: "150%", opacity: 0.2 }}
         whileInView={{ backgroundSize: "100%", opacity: 1 }}
         transition={{ duration: 15 }}
         className="absolute mt-16 h-full w-full bg-cover bg-center bg-no-repeat"
