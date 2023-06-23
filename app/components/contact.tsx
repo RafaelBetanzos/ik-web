@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-
 export default function ContactForm() {
   return (
     <div className="isolate">
@@ -103,7 +100,7 @@ export default function ContactForm() {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="bg-primary block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             ¡Hablemos!
           </button>

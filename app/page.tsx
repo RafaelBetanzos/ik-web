@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Footer from "./components/footer";
 import NavBar from "./components/navbar";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import ContactForm from "./components/contact";
 import {
@@ -10,6 +10,7 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import Hero from "./components/hero";
 
 export default function Home() {
   const [scrollPos, setScrollPos] = useState(0);
@@ -69,7 +70,7 @@ export default function Home() {
                 IK-HOLCÁN
               </motion.h1>
               <motion.p
-                className="mt-60 font-display text-7xl leading-tight text-amber-200 sm:mt-12"
+                className="font-display mt-36 text-6xl leading-tight text-amber-200 sm:mt-12"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 5 }}
@@ -97,7 +98,7 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto max-w-6xl py-12 text-center">
-        <p className="mb-4 px-2 font-display-serif text-xl font-medium text-stone-600 md:text-4xl">
+        <p className="font-display-serif mb-4 px-2 text-xl font-medium text-stone-600 md:text-4xl">
           {"La naturaleza es impresionante y observarla nos permite identificar un sin fin de beneficios que se encuentran a nuestro alcance."
             .split("")
             .map((char, index) => (
@@ -129,7 +130,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="relative overflow-hidden border-y-4 border-green-800  bg-gradient-to-r from-primary to-primary">
+      <div className="from-primary to-primary relative overflow-hidden  border-y-4 border-green-800 bg-gradient-to-r">
         <div
           style={{
             backgroundImage: `url("assets/images/air.svg")`,
@@ -145,7 +146,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h1 className="mb-4 font-display text-4xl uppercase tracking-widest text-amber-100">
+            <h1 className="font-display mb-4 text-4xl uppercase tracking-widest text-amber-100">
               Misión
             </h1>
             <p className="mx-auto max-w-5xl text-stone-200">
@@ -171,7 +172,7 @@ export default function Home() {
           transition={{ duration: 5, delay: 0 }}
         />
 
-        <div className="relative h-full bg-gradient-to-b from-black/0 to-primary/50 p-12 lg:p-36">
+        <div className="to-primary/50 relative h-full bg-gradient-to-b from-black/0 p-12 lg:p-36">
           <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: "50%" }}
@@ -179,7 +180,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0 }}
               viewport={{ once: true }}
             >
-              <h1 className="mt-12 inline bg-stone-800/60 font-display text-3xl font-thin leading-snug text-amber-100 md:text-5xl">
+              <h1 className="font-display mt-12 inline bg-stone-800/60 text-3xl font-thin leading-snug text-amber-100 md:text-5xl">
                 La medicina y la farmacia nacen del descubrimiento de las
                 bondades presentes en algunas plantas.
               </h1>
@@ -202,7 +203,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="min-h48 relative overflow-hidden border-y-4 border-green-950 bg-gradient-to-r from-primary to-primary">
+      <div className="min-h48 from-primary to-primary relative overflow-hidden border-y-4 border-green-950 bg-gradient-to-r">
         <div
           style={{
             backgroundImage: `url("assets/images/air.svg")`,
@@ -217,7 +218,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h1 className="mb-4 font-display text-4xl uppercase tracking-widest text-amber-100">
+            <h1 className="font-display mb-4 text-4xl uppercase tracking-widest text-amber-100">
               Visión
             </h1>
             <p className="mx-auto max-w-5xl text-stone-200">
@@ -229,166 +230,53 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-      <section className="pt-8">
-        <div className="container relative mx-auto h-hero overflow-hidden">
-          <motion.div
-            style={{
-              backgroundImage: `url("assets/images/photos/cosmetica.jpg")`,
-            }}
-            initial={{ scale: 1.5, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 15 }}
-            className="absolute mt-16 h-full w-full bg-cover bg-center"
-          ></motion.div>
-          <motion.div
-            className="absolute"
-            initial={{ opacity: 0, x: "-20%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h1 className="ml-8 mt-8 inline-block bg-stone-800/60 p-8 font-display text-6xl text-amber-200 shadow-2xl backdrop-blur-sm">
-              Cosmética natural
-            </h1>
-          </motion.div>
-          <motion.div
-            className="absolute bottom-8 right-0 w-2/3 rounded-sm border-l-[20px] border-amber-200 bg-stone-100 bg-opacity-80 p-16 shadow-xl backdrop-blur-sm backdrop-brightness-150"
-            initial={{ opacity: 0, y: "50%" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-xl leading-relaxed text-stone-700">
-              Explore nuestra completa gama de productos cosméticos naturales,
-              desarrollados con rigurosidad científica y formulados con
-              ingredientes de origen vegetal. Nuestros productos se basan en
-              estudios científicos que respaldan sus propiedades beneficiosas
-              para la piel. Mediante el uso de extractos botánicos y principios
-              activos naturales, ofrecemos soluciones efectivas y saludables
-              para el cuidado de la piel, preservando su equilibrio natural y
-              promoviendo una apariencia radiante de manera sostenible.
-            </p>
-            <div className="text-right">
-              <a
-                href="#"
-                className="mt-4 flex items-center justify-end gap-4 text-2xl opacity-70"
-              >
-                <span className="mt-2">Ver más</span>
-                <span aria-hidden="true" className="align-middle text-6xl">
-                  {"->"}
-                </span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
+
+      <section className="py-16">
+        <Hero
+          imgUrl="assets/images/photos/cosmetica.jpg"
+          title="Cosmética natural"
+          body="Explore nuestra completa gama de productos cosméticos naturales,
+          desarrollados con rigurosidad científica y formulados con
+          ingredientes de origen vegetal. Nuestros productos se basan en
+          estudios científicos que respaldan sus propiedades beneficiosas
+          para la piel. Mediante el uso de extractos botánicos y principios
+          activos naturales, ofrecemos soluciones efectivas y saludables
+          para el cuidado de la piel, preservando su equilibrio natural y
+          promoviendo una apariencia radiante de manera sostenible."
+          colorName="amber-200"
+        />
       </section>
 
-      <section className="pt-8">
-        <div className="container relative mx-auto h-hero overflow-hidden">
-          <motion.div
-            style={{
-              backgroundImage: `url("assets/images/photos/medicina.jpg")`,
-            }}
-            initial={{ scale: 1.5, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 15 }}
-            className="absolute mt-16 h-full w-full bg-cover bg-center"
-          ></motion.div>
-          <motion.div
-            className="absolute"
-            initial={{ opacity: 0, x: "-20%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h1 className="ml-8 mt-8 inline-block bg-stone-800/60 p-8 font-display text-6xl text-lime-200 shadow-2xl backdrop-blur-sm">
-              Fármacos naturales
-            </h1>
-          </motion.div>
-          <motion.div
-            className="absolute bottom-8 right-0 w-2/3 rounded-sm border-l-[20px] border-lime-200 bg-stone-100 bg-opacity-80 p-16 shadow-xl backdrop-blur-sm backdrop-brightness-150 "
-            initial={{ opacity: 0, y: "50%" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-xl leading-relaxed text-stone-700">
-              Explore nuestra completa gama de productos cosméticos naturales,
-              desarrollados con rigurosidad científica y formulados con
-              ingredientes de origen vegetal. Nuestros productos se basan en
-              estudios científicos que respaldan sus propiedades beneficiosas
-              para la piel. Mediante el uso de extractos botánicos y principios
-              activos naturales, ofrecemos soluciones efectivas y saludables
-              para el cuidado de la piel, preservando su equilibrio natural y
-              promoviendo una apariencia radiante de manera sostenible.
-            </p>
-            <div className="text-right">
-              <a
-                href="#"
-                className="mt-4 flex items-center justify-end gap-4 text-2xl opacity-70"
-              >
-                <span className="mt-2">Ver más</span>
-                <span aria-hidden="true" className="align-middle text-6xl">
-                  {"->"}
-                </span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
+      <section className="py-16">
+        <Hero
+          imgUrl="assets/images/photos/medicina.jpg"
+          title="Medicina natural"
+          body="Explore nuestra completa gama de productos cosméticos naturales,
+          desarrollados con rigurosidad científica y formulados con
+          ingredientes de origen vegetal. Nuestros productos se basan en
+          estudios científicos que respaldan sus propiedades beneficiosas
+          para la piel. Mediante el uso de extractos botánicos y principios
+          activos naturales, ofrecemos soluciones efectivas y saludables
+          para el cuidado de la piel, preservando su equilibrio natural y
+          promoviendo una apariencia radiante de manera sostenible."
+          colorName="lime-200"
+        />
       </section>
 
-      <section className="pt-8">
-        <div className="container relative mx-auto h-hero overflow-hidden">
-          <motion.div
-            style={{
-              backgroundImage: `url("assets/images/photos/consultoria.jpg")`,
-            }}
-            initial={{ scale: 1.5, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 15 }}
-            className="absolute mt-16 h-full w-full bg-cover bg-center"
-          ></motion.div>
-          <motion.div
-            className="absolute"
-            initial={{ opacity: 0, x: "-20%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h1 className="ml-8 mt-8 inline-block bg-stone-800/60 p-8 font-display text-6xl text-cyan-200 shadow-2xl backdrop-blur-sm">
-              Consultoría
-            </h1>
-          </motion.div>
-          <motion.div
-            className="absolute bottom-8 right-0 w-2/3 rounded-sm border-l-[20px] border-cyan-200 bg-stone-100 bg-opacity-80 p-16 shadow-xl backdrop-blur-sm backdrop-brightness-150"
-            initial={{ opacity: 0, y: "50%" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-xl leading-relaxed text-stone-700">
-              Explore nuestra completa gama de productos cosméticos naturales,
-              desarrollados con rigurosidad científica y formulados con
-              ingredientes de origen vegetal. Nuestros productos se basan en
-              estudios científicos que respaldan sus propiedades beneficiosas
-              para la piel. Mediante el uso de extractos botánicos y principios
-              activos naturales, ofrecemos soluciones efectivas y saludables
-              para el cuidado de la piel, preservando su equilibrio natural y
-              promoviendo una apariencia radiante de manera sostenible.
-            </p>
-            <div className="text-right">
-              <a
-                href="#"
-                className="mt-4 flex items-center justify-end gap-4 text-2xl opacity-70"
-              >
-                <span className="mt-2">Ver más</span>
-                <span aria-hidden="true" className="align-middle text-6xl">
-                  {"->"}
-                </span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
+      <section className="py-16">
+        <Hero
+          imgUrl="assets/images/photos/consultoria.jpg"
+          title="Consultoría"
+          body="Explore nuestra completa gama de productos cosméticos naturales,
+          desarrollados con rigurosidad científica y formulados con
+          ingredientes de origen vegetal. Nuestros productos se basan en
+          estudios científicos que respaldan sus propiedades beneficiosas
+          para la piel. Mediante el uso de extractos botánicos y principios
+          activos naturales, ofrecemos soluciones efectivas y saludables
+          para el cuidado de la piel, preservando su equilibrio natural y
+          promoviendo una apariencia radiante de manera sostenible."
+          colorName="cyan-200"
+        />
       </section>
 
       <section className="relative isolate mx-auto mt-24 flex flex-col justify-center overflow-hidden pb-24 text-center shadow-xl">
@@ -403,7 +291,7 @@ export default function Home() {
         <div className="absolute inset-y-0 -z-10 h-full w-[100%] bg-[radial-gradient(circle_at_center_left,_var(--tw-gradient-stops))] from-stone-50 via-stone-100 to-stone-300"></div>
 
         <div className="container mx-auto px-4">
-          <h1 className="my-24 font-display text-6xl tracking-wide text-stone-800">
+          <h1 className="font-display my-24 text-6xl tracking-wide text-stone-800">
             Nuestros valores
           </h1>
 
@@ -429,7 +317,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h1 className="mb-4 mt-4 font-display-serif text-4xl tracking-wide">
+                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
                   Honestidad
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
@@ -462,7 +350,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h1 className="mb-4 mt-4 font-display-serif text-4xl tracking-wide">
+                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
                   Responsabilidad
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
@@ -500,7 +388,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h1 className="mb-4 mt-4 font-display-serif text-4xl tracking-wide">
+                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
                   Ética
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
@@ -533,7 +421,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h1 className="mb-4 mt-4 font-display-serif text-4xl tracking-wide">
+                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
                   Integridad
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
@@ -566,7 +454,7 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h1 className="mb-4 mt-4 font-display-serif text-4xl tracking-wide">
+                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
                   Solidaridad
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
@@ -582,9 +470,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="p-24">
+      <section className="p-12">
         <div className="container mx-auto">
-          <h1 className="mb-24 text-center font-display text-6xl tracking-wide">
+          <h1 className="font-display mb-24 text-center text-6xl tracking-wide">
             Equipo
           </h1>
 
@@ -599,7 +487,7 @@ export default function Home() {
                 className="h-64 w-64 rounded-xl object-cover shadow-xl"
               ></div>
 
-              <h1 className="my-4 font-display-serif text-4xl">
+              <h1 className="font-display-serif my-4 text-4xl">
                 Rafael Betanzos
               </h1>
               <div className="text-xs text-stone-600">
@@ -619,7 +507,7 @@ export default function Home() {
                 className="h-64 w-64 rounded-xl object-cover shadow-xl"
               ></div>
 
-              <h1 className="my-4 font-display-serif text-4xl">
+              <h1 className="font-display-serif my-4 text-4xl">
                 Rafael Betanzos
               </h1>
               <div className="text-xs text-stone-600">
@@ -639,7 +527,7 @@ export default function Home() {
                 className="h-64 w-64 rounded-xl object-cover shadow-xl"
               ></div>
 
-              <h1 className="my-4 font-display-serif text-4xl">
+              <h1 className="font-display-serif my-4 text-4xl">
                 Rafael Betanzos
               </h1>
               <div className="text-xs text-stone-600">
@@ -659,7 +547,7 @@ export default function Home() {
                 className="h-64 w-64 rounded-xl object-cover shadow-xl"
               ></div>
 
-              <h1 className="my-4 font-display-serif text-4xl">
+              <h1 className="font-display-serif my-4 text-4xl">
                 Rafael Betanzos
               </h1>
               <div className="text-xs text-stone-600">
@@ -676,7 +564,7 @@ export default function Home() {
       <section className="bg-stone-100">
         <div className="container mx-auto flex flex-col items-center justify-between p-12 pt-24 lg:flex-row">
           <div>
-            <h2 className="text-center font-display text-4xl tracking-wide text-gray-900 sm:text-left sm:text-6xl">
+            <h2 className="font-display text-center text-4xl tracking-wide text-gray-900 sm:text-left sm:text-6xl">
               ¡Contáctanos!
             </h2>
             <p className="mt-2 text-center text-lg leading-8 text-gray-600 sm:text-left">
