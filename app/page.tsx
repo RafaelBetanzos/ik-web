@@ -76,7 +76,7 @@ export default function Home() {
                 transition={{ duration: 5 }}
                 viewport={{ once: true }}
               >
-                Embracing Nature's Wonders: Unveiling the Potential of
+                Embracing Nature&apos;s Wonders: Unveiling the Potential of
                 Traditional Medicine
               </motion.p>
               {/* <div className="mt-10 flex items-center justify-start gap-x-6">
@@ -475,7 +475,7 @@ export default function Home() {
           </h1>
           <div className="flex flex-col gap-4">
             <p className="mb-4 text-xl">
-              Ik-Holcán's team is a diverse and passionate group of experts who
+              Ik-Holcán&apos;s team is a diverse and passionate group of experts who
               bring together a wide range of skills and knowledge. Comprised of
               scientists, researchers, bioinformaticians, herbalists, and
               professionals from various disciplines, the team is united by a
@@ -485,7 +485,7 @@ export default function Home() {
 
             <h4 className="font-bold">Expert Scientists</h4>
             <p>
-              At the core of Ik-Holcán's team are dedicated and accomplished
+              At the core of Ik-Holcán&apos;s team are dedicated and accomplished
               scientists with expertise in biotechnology, bioinformatics,
               computational biology, and drug discovery. They are driven by an
               insatiable curiosity to unlock the potential of plant-derived
@@ -508,9 +508,9 @@ export default function Home() {
               Ethics and Sustainability Professionals
             </h4>
             <p>
-              Ensuring that every step aligns with Ik-Holcán's values, the team
+              Ensuring that every step aligns with Ik-Holcán&apos;s values, the team
               includes professionals well-versed in ethics, sustainability, and
-              responsible practices. They ensure that the company's
+              responsible practices. They ensure that the company&apos;s
               contributions are not only effective but also aligned with a
               profound sense of responsibility towards society and the
               environment.
@@ -518,7 +518,7 @@ export default function Home() {
 
             <h4 className="font-bold">Collaborators and Partners</h4>
             <p>
-              Ik-Holcán's team also includes a network of collaborators and
+              Ik-Holcán&apos;s team also includes a network of collaborators and
               partners, including academic institutions, research organizations,
               and industry experts. These collaborations foster a
               multidisciplinary approach to research and enhance the collective
@@ -544,7 +544,7 @@ export default function Home() {
             </p>
 
             <p>
-              As a cohesive unit, Ik-Holcán's team embodies the company's
+              As a cohesive unit, Ik-Holcán&apos;s team embodies the company&apos;s
               mission and values, working collaboratively to explore the vast
               potential of plant-based medicine, improve the quality of life for
               individuals, and contribute to a more sustainable future.
@@ -661,23 +661,23 @@ export default function Home() {
 
             <h4 className="font-bold">Scientists and Researchers</h4>
             <p>
-              Given Ik-Holcán's focus on biotechnology and plant-based medicine,
+              Given Ik-Holcán&apos;s focus on biotechnology and plant-based medicine,
               including scientists and researchers with expertise in these
-              fields can provide invaluable insights into the company's research
+              fields can provide invaluable insights into the company&apos;s research
               and development efforts.
             </p>
 
             <h4 className="font-bold">Ethics and Sustainability Specialists</h4>
             <p>
-              Considering Ik-Holcán's commitment to ethical practices and
+              Considering Ik-Holcán&apos;s commitment to ethical practices and
               sustainability, including experts in these areas on the
-              supervisory board can ensure that the company's actions align with
+              supervisory board can ensure that the company&apos;s actions align with
               its values.
             </p>
 
             <h4 className="font-bold">Finance and Legal Professionals</h4>
             <p>
-              It's essential to have individuals with financial and legal acumen
+              It&apos;s essential to have individuals with financial and legal acumen
               on the supervisory board to oversee financial reporting,
               compliance, and risk management.
             </p>
@@ -696,7 +696,7 @@ export default function Home() {
               Sustainable Future
             </h4>
             <p>
-              Ik-Holcán's story began in 2016, shaped by a deep connection to
+              Ik-Holcán&apos;s story began in 2016, shaped by a deep connection to
               nature and a desire to explore the potential of herbal remedies.
               Growing up in a household where natural remedies were embraced,
               the founder, driven by curiosity and a sense of responsibility,
@@ -704,7 +704,7 @@ export default function Home() {
               biotechnological venture.
             </p>
             <p>
-              In 2016, the founder's passion for cultivation and sustainable
+              In 2016, the founder&apos;s passion for cultivation and sustainable
               living led to the creation of the Agrobox, an innovative agronomic
               box designed for indoor crop cultivation. This early project laid
               the foundation for what was to come.
@@ -721,7 +721,7 @@ export default function Home() {
               many.
             </p>
             <p>
-              Their journey of discovery continued as they pursued a master's
+              Their journey of discovery continued as they pursued a master&apos;s
               degree, deepening their understanding of metabolites and their
               functions. This period fueled their determination to identify
               novel natural compounds that could serve as the basis for
@@ -734,8 +734,8 @@ export default function Home() {
               therapeutic solutions.
             </p>
             <p>
-              Throughout the journey, the founder's vision of a sustainable and
-              impactful enterprise persisted. Ik-Holcán's mission revolves
+              Throughout the journey, the founder&apos;s vision of a sustainable and
+              impactful enterprise persisted. Ik-Holcán&apos;s mission revolves
               around seeking compounds that benefit humanity and the
               environment, focusing on medicines and agricultural products. A
               profound desire to minimize environmental impact led to a
@@ -743,7 +743,7 @@ export default function Home() {
               implementing waste reduction measures.
             </p>
             <p>
-              Collaboration became a cornerstone of Ik-Holcán's growth. The
+              Collaboration became a cornerstone of Ik-Holcán&apos;s growth. The
               company formed research agreements with prestigious institutions,
               such as the CIAD in Mexico and the Argentinean Association of
               Bioinformatics and Computational Biology, enhancing the exchange
@@ -757,9 +757,9 @@ export default function Home() {
               while cultivating a sustainable future for all.
             </p>
             <p>
-              Ik-Holcán's journey exemplifies the power of combining traditional
+              Ik-Holcán&apos;s journey exemplifies the power of combining traditional
               wisdom with modern advancements, fostering a company that embraces
-              nature's potential, scientific rigor, and a profound sense of
+              nature&apos;s potential, scientific rigor, and a profound sense of
               responsibility for the well-being of people and the planet. The
               future holds the promise of a flourishing global enterprise that
               reshapes healthcare, agriculture, and environmental stewardship
@@ -785,7 +785,7 @@ export default function Home() {
             <ul className="flex list-decimal flex-col gap-2">
               <li>
                 Nature-Inspired Solutions: Our journey began with a profound
-                appreciation for nature's wisdom. We seek to harness the power
+                appreciation for nature&apos;s wisdom. We seek to harness the power
                 of plant-based remedies and sustainable agricultural practices,
                 guided by the belief that nature provides us with invaluable
                 resources for healing and nourishment.
