@@ -11,7 +11,7 @@ import {
 export default function Home() {
   return (
     <main>
-      <NavBar dark={1} />
+      <NavBar dark={true} />
 
       <section className="bg-stone-100">
         <div className="container mx-auto flex flex-col items-center justify-between p-12 pt-24 lg:flex-row">
