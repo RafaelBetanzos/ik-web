@@ -76,7 +76,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 Innovation at Ik-Holcán: Pioneering a Sustainable Future with
-                Nature's Ingenuity
+                Nature&apos;s Ingenuity
               </motion.p>
               {/* <div className="mt-10 flex items-center justify-start gap-x-6">
                 <a
@@ -102,7 +102,7 @@ export default function Home() {
           Welcome to the heart of innovation at Ik-Holcán,
         </span>
         <p className="font-display-serif px-2 text-center text-lg font-medium text-stone-500 md:text-2xl">
-          {"where nature's ingenuity meets cutting-edge science to shape a sustainable future. At our innovation hub, we embark on a relentless quest to push the boundaries of what is possible, guided by our unwavering commitment to harnessing the potential of herbalism and biotechnology."
+          {"where nature&apos;s ingenuity meets cutting-edge science to shape a sustainable future. At our innovation hub, we embark on a relentless quest to push the boundaries of what is possible, guided by our unwavering commitment to harnessing the potential of herbalism and biotechnology."
             .split("")
             .map((char, index) => (
               <motion.span
@@ -140,9 +140,9 @@ export default function Home() {
               As you explore our innovation page, we invite you to witness the
               transformative power of nature and human ingenuity. Together, let
               us embark on a journey of discovery, innovation, and positive
-              impact. At Ik-Holcán, innovation isn't just a destination; it's a
-              perpetual voyage towards a brighter, healthier, and more
-              sustainable tomorrow.
+              impact. At Ik-Holcán, innovation isn&apos;t just a destination;
+              it&apos;s a perpetual voyage towards a brighter, healthier, and
+              more sustainable tomorrow.
             </p>
           </motion.div>
         </div>
@@ -157,16 +157,16 @@ export default function Home() {
           className="flex flex-col gap-4"
         >
           <h2 className="mt-4 text-center text-2xl">
-            Unveiling Nature's Secrets
+            Unveiling Nature&apos;s Secrets
           </h2>
 
           <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Our journey begins with a profound respect for nature's mysteries.
-            With every experiment and discovery, we peel back the layers of the
-            natural world, unveiling its hidden treasures. Through rigorous
-            research and exploration, we delve into the intricate realm of
-            herbal medicine, seeking to understand its timeless wisdom and the
-            secrets it holds for advancing human and animal health.
+            Our journey begins with a profound respect for nature&apos;s
+            mysteries. With every experiment and discovery, we peel back the
+            layers of the natural world, unveiling its hidden treasures. Through
+            rigorous research and exploration, we delve into the intricate realm
+            of herbal medicine, seeking to understand its timeless wisdom and
+            the secrets it holds for advancing human and animal health.
           </p>
 
           <h2 className="mt-4 text-center text-2xl">
@@ -192,7 +192,8 @@ export default function Home() {
             cosmetics, each achievement embodies the culmination of relentless
             research and unwavering dedication. Our relentless pursuit of
             excellence drives us to explore novel frontiers, striving to unlock
-            nature's potential for the betterment of humanity and the planet.
+            nature&apos;s potential for the betterment of humanity and the
+            planet.
           </p>
 
           <h2 className="mt-4 text-center text-2xl">
@@ -204,8 +205,8 @@ export default function Home() {
             in our commitment to environmental stewardship. Our innovations
             prioritize eco-friendly practices, with a deep respect for
             biodiversity, responsible sourcing of raw materials, and minimal
-            environmental impact. At Ik-Holcán, sustainability isn't just a
-            buzzword; it's the guiding star that illuminates our path to a
+            environmental impact. At Ik-Holcán, sustainability isn&apos;t just a
+            buzzword; it&apos;s the guiding star that illuminates our path to a
             greener and healthier world.
           </p>
 

@@ -98,7 +98,7 @@ export default function Home() {
 
       <div className="container mx-auto max-w-6xl p-4 py-12 text-center ">
         <p className="font-display-serif mb-8 px-2 text-center text-lg font-medium text-stone-500 md:text-2xl">
-          {"At Ik-Holcán, our cosmetics are meticulously designed to celebrate the harmonious synergy between nature and beauty. Guided by the expertise of our team, we harness the finest elements of herbalism to craft cosmetics that not only enhance your external radiance but also nurture your inner well-being. We believe that nature's bountiful offerings hold the key to unlocking your natural beauty, and our high-quality, purpose-driven ingredients are carefully chosen to care for your health. Immerse yourself in the transformative power of our natural cosmetics, and experience a radiant, luminous glow that embodies the essence of Ik-Holcán's commitment to nature-inspired beauty."
+          {"At Ik-Holcán, our cosmetics are meticulously designed to celebrate the harmonious synergy between nature and beauty. Guided by the expertise of our team, we harness the finest elements of herbalism to craft cosmetics that not only enhance your external radiance but also nurture your inner well-being. We believe that nature&apos;s bountiful offerings hold the key to unlocking your natural beauty, and our high-quality, purpose-driven ingredients are carefully chosen to care for your health. Immerse yourself in the transformative power of our natural cosmetics, and experience a radiant, luminous glow that embodies the essence of Ik-Holcán&apos;s commitment to nature-inspired beauty."
             .split("")
             .map((char, index) => (
               <motion.span
@@ -120,7 +120,8 @@ export default function Home() {
           className="flex flex-col gap-4"
         >
           <h2 className="mt-4 text-center text-2xl">
-            Pharmaceutical Innovations by Ik-Holcán: Nature's Gift for Healing
+            Pharmaceutical Innovations by Ik-Holcán: Nature&apos;s Gift for
+            Healing
           </h2>
 
           <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
@@ -131,41 +132,41 @@ export default function Home() {
             diseases. Rooted in the ancient wisdom of herbalism, we firmly
             believe in the potential of traditional remedies to transform modern
             healthcare. Each breakthrough discovery propels us forward in our
-            mission to unlock nature's therapeutic secrets, proving the
+            mission to unlock nature&apos;s therapeutic secrets, proving the
             effectiveness of herbal medicine through rigorous scientific study.
-            With Ik-Holcán's pharmaceutical advancements, we envision a world
-            where humanity embraces nature's gifts for healing, ushering in a
-            new era of well-being and health.
+            With Ik-Holcán&apos;s pharmaceutical advancements, we envision a
+            world where humanity embraces nature&apos;s gifts for healing,
+            ushering in a new era of well-being and health.
           </p>
 
           <h2 className="mt-4 text-center text-2xl">
-            Herbalism at Ik-Holcán: Honoring Nature's Timeless Wisdom
+            Herbalism at Ik-Holcán: Honoring Nature&apos;s Timeless Wisdom
           </h2>
           <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
             At Ik-Holcán, herbalism is the heart and soul of our commitment to
             holistic well-being. We deeply value the wisdom passed down through
             generations, understanding that traditional herbal remedies hold a
-            profound connection to nature's healing powers. Our team of experts
-            passionately explores the intricacies of herbal medicine, studying
-            its effectiveness and uncovering the reasons behind its healing
-            properties. We believe that herbalism is a treasure trove of
+            profound connection to nature&apos;s healing powers. Our team of
+            experts passionately explores the intricacies of herbal medicine,
+            studying its effectiveness and uncovering the reasons behind its
+            healing properties. We believe that herbalism is a treasure trove of
             knowledge, offering natural and sustainable solutions for a
             healthier world. With every step, we strive to preserve and promote
             the time-honored practices of herbalism, ensuring that the marvels
-            of nature's bounty continue to enrich the lives of generations to
-            come.
+            of nature&apos;s bounty continue to enrich the lives of generations
+            to come.
           </p>
 
           <h2 className="mt-4 text-center text-2xl">Natural Cosmetics</h2>
           <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
             At Ik-Holcán, we take pride in creating natural cosmetics that are
             expertly crafted to harness the power of herbal medicine, offering
-            you the best of nature's goodness for a healthier and more radiant
-            you. Our cosmetics are meticulously formulated by our team of
-            experts, who carefully select high-quality, purpose-driven raw
+            you the best of nature&apos;s goodness for a healthier and more
+            radiant you. Our cosmetics are meticulously formulated by our team
+            of experts, who carefully select high-quality, purpose-driven raw
             materials. These ingredients are chosen not only for their
             beneficial effects on your skin but also with a deep commitment to
-            caring for your overall health and well-being. With Ik-Holcán's
+            caring for your overall health and well-being. With Ik-Holcán&apos;s
             natural cosmetics, you can feel confident that you are pampering
             yourself with products that nurture both your beauty and your
             health.
