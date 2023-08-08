@@ -70,13 +70,14 @@ export default function Home() {
                 IK-HOLCÁN
               </motion.h1>
               <motion.p
-                className="font-display mt-36 text-6xl leading-tight text-amber-200 sm:mt-12"
+                className="font-display mt-36 text-5xl leading-tight text-amber-200 sm:mt-12"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 5 }}
                 viewport={{ once: true }}
               >
-                Hagamos algo grande juntos
+                Embracing Nature's Wonders: Unveiling the Potential of
+                Traditional Medicine
               </motion.p>
               {/* <div className="mt-10 flex items-center justify-start gap-x-6">
                 <a
@@ -99,7 +100,7 @@ export default function Home() {
 
       <div className="container mx-auto max-w-6xl py-12 text-center">
         <p className="font-display-serif mb-4 px-2 text-xl font-medium text-stone-600 md:text-4xl">
-          {"La naturaleza es impresionante y observarla nos permite identificar un sin fin de beneficios que se encuentran a nuestro alcance."
+          {"The wonders of nature are boundless, and through observation, we uncover a myriad of benefits within our reach."
             .split("")
             .map((char, index) => (
               <motion.span
@@ -120,12 +121,14 @@ export default function Home() {
           viewport={{ once: true }}
         >
           <p className="px-4 text-sm font-light text-stone-600 md:text-lg">
-            Ik-Holcán es una empresa constituida por un grupo de amigos con
-            habilidades multidisciplinarias, unidos por la necesidad de crecer y
-            combinar sus conocimientos para proponer soluciones útiles a los
-            demás, soluciones que conjuguen con los valores de nuestra sociedad,
-            procurando mantener un equilibrio del cuidado ambiental, la salud
-            animal y la humana.
+            As of today, humanity has mastered the manipulation of matter at
+            atomic levels, leading to significant advancements in healthcare.
+            However, at Ik-Holcán, we believe that when it comes to treating
+            chronic, degenerative, and cancerous diseases, therapies that enable
+            patients to live better and, eventually, prevent adverse health
+            events should be considered. This is where traditional or herbal
+            medicine becomes essential, deserving rigorous study to unveil its
+            effectiveness and the reasons behind it.
           </p>
         </motion.div>
       </div>
@@ -318,13 +321,11 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Honestidad
+                  Honesty
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
-                  Siempre nos conducimos con honestidad hacia nuestros clientes,
-                  compañeros y amigos. La honestidad es un valor fundamental de
-                  nuestra empresa, la cual nos permite garantizar la calidad y
-                  seguridad en la elaboración de nuestros productos.
+                  We uphold the highest standards of integrity and transparency
+                  in all our endeavors, fostering trust among our stakeholders.
                 </p>
               </motion.div>
             </div>
@@ -351,15 +352,12 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Responsabilidad
+                  Responsibility
                 </h1>
                 <p className="text-md text-center leading-tight text-stone-500">
-                  Somos una empresa con gran sentido de responsabilidad hacia
-                  nuestros clientes. Siempre nos conducimos en el marco de la
-                  legalidad, los procedimientos de elaboración de nuestros
-                  productos son realizados por personal profesional, de gran
-                  calidad humana y conocimiento científico, la salud es un bien
-                  invaluable y nosotros la tratamos como tal.
+                  We take ownership of our actions and decisions, ensuring
+                  accountability for the impact of our work on individuals and
+                  the environment.
                 </p>
               </motion.div>
             </div>
@@ -472,11 +470,88 @@ export default function Home() {
 
       <section className="p-12">
         <div className="container mx-auto">
-          <h1 className="font-display mb-24 text-center text-6xl tracking-wide">
-            Equipo
+          <h1 className="font-display mb-12 text-center text-6xl tracking-wide">
+            Our Team
           </h1>
+          <div className="flex flex-col gap-4">
+            <p className="mb-4 text-xl">
+              Ik-Holcán's team is a diverse and passionate group of experts who
+              bring together a wide range of skills and knowledge. Comprised of
+              scientists, researchers, bioinformaticians, herbalists, and
+              professionals from various disciplines, the team is united by a
+              shared vision to advance plant-based medicine through cutting-edge
+              science and ethical practices.
+            </p>
 
-          <div className="flex flex-wrap justify-center gap-10">
+            <h4 className="font-bold">Expert Scientists</h4>
+            <p>
+              At the core of Ik-Holcán's team are dedicated and accomplished
+              scientists with expertise in biotechnology, bioinformatics,
+              computational biology, and drug discovery. They are driven by an
+              insatiable curiosity to unlock the potential of plant-derived
+              compounds and leverage the latest technological tools for their
+              research.
+            </p>
+
+            <h4 className="font-bold">
+              Herbalists and Traditional Knowledge Experts
+            </h4>
+            <p>
+              Working in harmony with the scientific team are herbalists and
+              traditional knowledge experts who contribute invaluable wisdom and
+              understanding of centuries-old herbal remedies. Their insights
+              help bridge the gap between traditional healing practices and
+              modern research.
+            </p>
+
+            <h4 className="font-bold">
+              Ethics and Sustainability Professionals
+            </h4>
+            <p>
+              Ensuring that every step aligns with Ik-Holcán's values, the team
+              includes professionals well-versed in ethics, sustainability, and
+              responsible practices. They ensure that the company's
+              contributions are not only effective but also aligned with a
+              profound sense of responsibility towards society and the
+              environment.
+            </p>
+
+            <h4 className="font-bold">Collaborators and Partners</h4>
+            <p>
+              Ik-Holcán's team also includes a network of collaborators and
+              partners, including academic institutions, research organizations,
+              and industry experts. These collaborations foster a
+              multidisciplinary approach to research and enhance the collective
+              impact of their efforts.
+            </p>
+
+            <h4 className="font-bold">Passionate Communicators</h4>
+            <p>
+              To disseminate their findings and knowledge, the team includes
+              skilled communicators who are adept at translating complex
+              scientific concepts into accessible language. They engage in
+              public outreach, publish research papers, and share patents to
+              promote awareness and understanding of plant-based medicine.
+            </p>
+
+            <h4 className="font-bold">Inclusivity and Diversity Advocates</h4>
+            <p>
+              Embracing the values of respect and solidarity, the team is
+              committed to promoting inclusivity and diversity within the
+              organization and beyond. They recognize the value of diverse
+              perspectives in driving innovation and addressing global
+              challenges.
+            </p>
+
+            <p>
+              As a cohesive unit, Ik-Holcán's team embodies the company's
+              mission and values, working collaboratively to explore the vast
+              potential of plant-based medicine, improve the quality of life for
+              individuals, and contribute to a more sustainable future.
+            </p>
+          </div>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-10">
             <div className="flex flex-col items-center">
               <div
                 style={{
@@ -561,15 +636,245 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="p-12">
+        <div className="container mx-auto">
+          <h1 className="font-display mb-12 text-center text-6xl tracking-wide">
+            Supervisory Board
+          </h1>
+          <div className="flex flex-col gap-4">
+            <h4 className="font-bold">Independent Directors</h4>
+            <p>
+              Supervisory boards often include independent directors who are not
+              involved in the day-to-day operations of the company. These
+              directors bring diverse expertise and experience from various
+              industries and can offer impartial advice and oversight.
+            </p>
+
+            <h4 className="font-bold">Industry Experts</h4>
+            <p>
+              Having individuals with extensive knowledge and experience in the
+              biotechnology, pharmaceuticals, or related industries can be
+              highly beneficial. Their expertise can help guide strategic
+              decisions and ensure that the company remains competitive and
+              aligned with industry trends.
+            </p>
+
+            <h4 className="font-bold">Scientists and Researchers</h4>
+            <p>
+              Given Ik-Holcán's focus on biotechnology and plant-based medicine,
+              including scientists and researchers with expertise in these
+              fields can provide invaluable insights into the company's research
+              and development efforts.
+            </p>
+
+            <h4 className="font-bold">Ethics and Sustainability Specialists</h4>
+            <p>
+              Considering Ik-Holcán's commitment to ethical practices and
+              sustainability, including experts in these areas on the
+              supervisory board can ensure that the company's actions align with
+              its values.
+            </p>
+
+            <h4 className="font-bold">Finance and Legal Professionals</h4>
+            <p>
+              It's essential to have individuals with financial and legal acumen
+              on the supervisory board to oversee financial reporting,
+              compliance, and risk management.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="p-12">
+        <div className="container mx-auto">
+          <h1 className="font-display mb-12 text-center text-6xl tracking-wide">
+            History
+          </h1>
+          <div className="flex flex-col gap-4">
+            <h4 className="font-bold">
+              The History of Ik-Holcán: Blending Nature and Science for a
+              Sustainable Future
+            </h4>
+            <p>
+              Ik-Holcán's story began in 2016, shaped by a deep connection to
+              nature and a desire to explore the potential of herbal remedies.
+              Growing up in a household where natural remedies were embraced,
+              the founder, driven by curiosity and a sense of responsibility,
+              embarked on a journey that would transform into a remarkable
+              biotechnological venture.
+            </p>
+            <p>
+              In 2016, the founder's passion for cultivation and sustainable
+              living led to the creation of the Agrobox, an innovative agronomic
+              box designed for indoor crop cultivation. This early project laid
+              the foundation for what was to come.
+            </p>
+            <p>
+              As the founder delved into the world of biotechnology during their
+              engineering studies, a groundbreaking realization occurred.
+              Discovering the significance of secondary metabolites, they
+              recognized the untapped potential of natural compounds for
+              therapeutic applications in humans, animals, and agriculture while
+              safeguarding the environment. From 2017 to 2019, fueled by this
+              newfound insight, the founder designed a natural anti-inflammatory
+              ointment that garnered positive feedback and proved beneficial to
+              many.
+            </p>
+            <p>
+              Their journey of discovery continued as they pursued a master's
+              degree, deepening their understanding of metabolites and their
+              functions. This period fueled their determination to identify
+              novel natural compounds that could serve as the basis for
+              eco-friendly pharmaceuticals.
+            </p>
+            <p>
+              With an unwavering commitment to knowledge expansion, the founder
+              is currently pursuing a Ph.D. in computer-aided drug discovery,
+              refining their expertise in the quest for groundbreaking
+              therapeutic solutions.
+            </p>
+            <p>
+              Throughout the journey, the founder's vision of a sustainable and
+              impactful enterprise persisted. Ik-Holcán's mission revolves
+              around seeking compounds that benefit humanity and the
+              environment, focusing on medicines and agricultural products. A
+              profound desire to minimize environmental impact led to a
+              conscious choice of sourcing organic raw materials and
+              implementing waste reduction measures.
+            </p>
+            <p>
+              Collaboration became a cornerstone of Ik-Holcán's growth. The
+              company formed research agreements with prestigious institutions,
+              such as the CIAD in Mexico and the Argentinean Association of
+              Bioinformatics and Computational Biology, enhancing the exchange
+              of knowledge and expertise.
+            </p>
+            <p>
+              As the sole founder, the visionary leader envisions Ik-Holcán
+              transcending borders and becoming a global enterprise. By merging
+              nature-inspired remedies with cutting-edge science, Ik-Holcán
+              aspires to address global health and environmental challenges
+              while cultivating a sustainable future for all.
+            </p>
+            <p>
+              Ik-Holcán's journey exemplifies the power of combining traditional
+              wisdom with modern advancements, fostering a company that embraces
+              nature's potential, scientific rigor, and a profound sense of
+              responsibility for the well-being of people and the planet. The
+              future holds the promise of a flourishing global enterprise that
+              reshapes healthcare, agriculture, and environmental stewardship
+              for generations to come.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="p-12">
+        <div className="container mx-auto">
+          <h1 className="font-display mb-4 text-center text-6xl tracking-wide">
+            Sustainability
+          </h1>
+          <h1 className="font-display mb-12 text-center text-4xl tracking-wide">
+            Our approach
+          </h1>
+          <div className="flex flex-col gap-4">
+            <h4 className="font-bold">
+              Sustainability Approach: Embracing Nature, Empowering Change
+            </h4>
+
+            <ul className="flex list-decimal flex-col gap-2">
+              <li>
+                Nature-Inspired Solutions: Our journey began with a profound
+                appreciation for nature's wisdom. We seek to harness the power
+                of plant-based remedies and sustainable agricultural practices,
+                guided by the belief that nature provides us with invaluable
+                resources for healing and nourishment.
+              </li>
+              <li>
+                Eco-Friendly Products: Every product we develop undergoes
+                rigorous assessment to ensure it aligns with our sustainability
+                principles. From sourcing organic and ethically cultivated raw
+                materials to employing eco-friendly production methods, we
+                prioritize minimizing our ecological footprint.
+              </li>
+              <li>
+                Waste Reduction: Conscious waste management is a key pillar of
+                our sustainability efforts. We implement innovative measures to
+                reduce waste generation, striving for a circular approach that
+                maximizes resource efficiency and minimizes environmental
+                impact.
+              </li>
+              <li>
+                Green Energy: We actively seek renewable energy sources to power
+                our facilities and operations. Embracing solar, wind, and other
+                green energy options, we reduce our reliance on non-renewable
+                resources and lower our carbon emissions.
+              </li>
+              <li>
+                Biodiversity Conservation: We are staunch advocates for
+                biodiversity preservation. As we explore the vast potential of
+                herbal remedies, we support sustainable harvesting practices and
+                engage in projects that protect endangered plant species and
+                their ecosystems.
+              </li>
+              <li>
+                Ethical Partnerships: Our collaborations and partnerships extend
+                beyond scientific exploration. We seek alliances with
+                organizations and suppliers that share our commitment to
+                sustainability and ethical practices, fostering a collective
+                effort towards positive change.
+              </li>
+              <li>
+                Scientific Research for Sustainability: We actively invest in
+                research initiatives that promote sustainable agriculture,
+                conservation, and environmental protection. By integrating
+                scientific advancements with traditional knowledge, we drive
+                innovation that benefits both people and the planet.
+              </li>
+              <li>
+                Public Awareness: We consider education and public awareness
+                essential in creating a more sustainable world. Through public
+                outreach and educational programs, we empower individuals with
+                knowledge about sustainable living and the impact of their
+                choices.
+              </li>
+              <li>
+                Continuous Improvement: Sustainability is a journey, and we
+                understand the need for continuous improvement. We regularly
+                assess and refine our practices, seeking innovative solutions
+                that further enhance our environmental and social contributions.
+              </li>
+              <li>
+                Advocacy for Global Impact: Beyond our immediate sphere of
+                influence, we strive to be agents of change on a global scale.
+                By advocating for sustainable practices in the biotechnology and
+                pharmaceutical industries, we aim to inspire collective action
+                towards a more sustainable future.
+              </li>
+            </ul>
+            <p>
+              Our sustainability approach at Ik-Holcán is a testament to our
+              dedication to preserving the beauty and richness of nature while
+              advancing biotechnological solutions for the benefit of all. We
+              envision a world where sustainability is not just a commitment but
+              a way of life, and we work tirelessly to turn that vision into a
+              tangible reality. Together, we can create a harmonious coexistence
+              between humanity and the environment, empowering positive change
+              for generations to come.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-stone-100">
-        <div className="container mx-auto flex flex-col items-center justify-between p-12 pt-24 lg:flex-row">
+        <div className="container mx-auto flex flex-col items-center justify-between p-12 lg:flex-row">
           <div>
             <h2 className="font-display text-center text-4xl tracking-wide text-gray-900 sm:text-left sm:text-6xl">
-              ¡Contáctanos!
+              Contact us
             </h2>
-            <p className="mt-2 text-center text-lg leading-8 text-gray-600 sm:text-left">
+            {/* <p className="mt-2 text-center text-lg leading-8 text-gray-600 sm:text-left">
               Escríbenos y te respondemos...
-            </p>
+            </p> */}
 
             <div className="mt-16 flex flex-col gap-8 text-stone-600">
               <div className="flex">

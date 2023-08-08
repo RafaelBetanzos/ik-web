@@ -5,9 +5,12 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useScroll } from "framer-motion";
 
 const navigation = [
-  { name: "Productos", href: "#" },
-  { name: "Servicios", href: "#" },
-  { name: "Contacto", href: "#" },
+  { name: "About", href: "/about" },
+  { name: "Innovation", href: "/innovation" },
+  { name: "Health", href: "/health" },
+  { name: "Animals", href: "/animals" },
+  { name: "Agriculture", href: "/agriculture" },
+  { name: "Contact", href: "/contact" },
 ];
 
 interface NavBarProps {
@@ -24,7 +27,7 @@ export default function NavBar(props: NavBarProps) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Ik-Holcán</span>
             <img
               className="h-8 w-auto invert transition-all hover:scale-110 dark:invert-0"

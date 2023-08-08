@@ -6,7 +6,7 @@ export default function ContactForm() {
         aria-hidden="true"
       ></div>
       <form
-        action="#"
+        action="https://hermes.decoda.ar/-1001951152215/send"
         method="POST"
         className="mx-auto mt-16 max-w-xl sm:mt-20"
       >
@@ -16,7 +16,7 @@ export default function ContactForm() {
               htmlFor="first-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Nombre
+              First name
             </label>
             <div className="mt-2.5">
               <input
@@ -33,7 +33,7 @@ export default function ContactForm() {
               htmlFor="last-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Apellido
+              Last name
             </label>
             <div className="mt-2.5">
               <input
@@ -67,7 +67,7 @@ export default function ContactForm() {
               htmlFor="phone-number"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Teléfono
+              Telephone
             </label>
             <div className="relative mt-2.5">
               <input
@@ -84,7 +84,7 @@ export default function ContactForm() {
               htmlFor="message"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Mensaje
+              Message
             </label>
             <div className="mt-2.5">
               <textarea
@@ -102,7 +102,7 @@ export default function ContactForm() {
             type="submit"
             className="bg-primary block w-full rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-600"
           >
-            ¡Hablemos!
+            Send
           </button>
         </div>
       </form>
