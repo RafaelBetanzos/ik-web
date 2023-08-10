@@ -1,16 +1,8 @@
 "use client";
-import Image from "next/image";
 import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import ContactForm from "../components/contact";
-import {
-  BuildingOfficeIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline";
-import Hero from "../components/hero";
 
 export default function Innovation() {
   const [scrollPos, setScrollPos] = useState(0);

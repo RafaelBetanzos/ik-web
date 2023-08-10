@@ -1,6 +1,5 @@
 import "./globals.css";
 import localFont from "next/font/local";
-import { Arvo, Inter, Merriweather } from "next/font/google";
 
 const inter = localFont({
   src: [
