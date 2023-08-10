@@ -41,7 +41,7 @@ export default function Home() {
               }}
             /> */}
             <div
-              className="relative -z-10 h-full w-full bg-center brightness-[.60]"
+              className="relative -z-10 h-full w-full bg-center brightness-[.85]"
               style={{
                 backgroundImage: `url("assets/images/health.jpg")`,
                 backgroundSize: "cover",
@@ -75,7 +75,7 @@ export default function Home() {
                 transition={{ duration: 5 }}
                 viewport={{ once: true }}
               >
-                Cosmetics by Ik-Holcán: Where Nature Enhances Beauty
+                Where Nature Enhances Beauty
               </motion.p>
               {/* <div className="mt-10 flex items-center justify-start gap-x-6">
                 <a
@@ -98,7 +98,7 @@ export default function Home() {
 
       <div className="container mx-auto max-w-6xl p-4 py-12 text-center ">
         <p className="font-display-serif mb-8 px-2 text-center text-lg font-medium text-stone-500 md:text-2xl">
-          {"At Ik-Holcán, our cosmetics are meticulously designed to celebrate the harmonious synergy between nature and beauty. Guided by the expertise of our team, we harness the finest elements of herbalism to craft cosmetics that not only enhance your external radiance but also nurture your inner well-being. We believe that nature&apos;s bountiful offerings hold the key to unlocking your natural beauty, and our high-quality, purpose-driven ingredients are carefully chosen to care for your health. Immerse yourself in the transformative power of our natural cosmetics, and experience a radiant, luminous glow that embodies the essence of Ik-Holcán&apos;s commitment to nature-inspired beauty."
+          {"At Ik-Holcán, our cosmetics are meticulously designed to celebrate the harmonious synergy between nature and beauty. Guided by the expertise of our team, we harness the finest elements of herbalism to craft cosmetics that not only enhance your external radiance but also nurture your inner well-being. We believe that nature's bountiful offerings hold the key to unlocking your natural beauty, and our high-quality, purpose-driven ingredients are carefully chosen to care for your health. Immerse yourself in the transformative power of our natural cosmetics, and experience a radiant, luminous glow that embodies the essence of Ik-Holcán's commitment to nature-inspired beauty."
             .split("")
             .map((char, index) => (
               <motion.span

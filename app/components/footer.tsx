@@ -17,16 +17,16 @@ export default function Footer() {
           </div>
           <div className="flex flex-col text-stone-200">
             <div className="font-display mb-4 text-lg uppercase tracking-widest">
-              About
+              <a href="/about">About</a>
             </div>
             <div className="flex flex-col gap-4 text-sm">
-              <a className="text-sm" href="#">
+              <a className="text-sm" href="/about">
                 Our mission
               </a>
-              <a className="text-sm" href="#">
+              <a className="text-sm" href="/about">
                 History
               </a>
-              <a className="text-sm" href="#">
+              <a className="text-sm" href="/about">
                 Values
               </a>
             </div>

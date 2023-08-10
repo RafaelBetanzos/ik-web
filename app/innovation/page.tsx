@@ -41,7 +41,7 @@ export default function Home() {
               }}
             /> */}
             <div
-              className="relative -z-10 h-full w-full bg-center brightness-[.60]"
+              className="relative -z-10 h-full w-full bg-center brightness-[.80]"
               style={{
                 backgroundImage: `url("assets/images/innovation.jpg")`,
                 backgroundSize: "cover",
@@ -75,8 +75,7 @@ export default function Home() {
                 transition={{ duration: 5 }}
                 viewport={{ once: true }}
               >
-                Innovation at Ik-Holcán: Pioneering a Sustainable Future with
-                Nature&apos;s Ingenuity
+                Pioneering a Sustainable Future with Nature&apos;s Ingenuity
               </motion.p>
               {/* <div className="mt-10 flex items-center justify-start gap-x-6">
                 <a
@@ -98,18 +97,15 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto max-w-6xl p-4 py-12 text-center ">
-        <span className="font-display-serif mb-4 px-2  text-xl font-medium text-stone-600 md:text-4xl">
-          Welcome to the heart of innovation at Ik-Holcán,
-        </span>
-        <p className="font-display-serif px-2 text-center text-lg font-medium text-stone-500 md:text-2xl">
-          {"where nature&apos;s ingenuity meets cutting-edge science to shape a sustainable future. At our innovation hub, we embark on a relentless quest to push the boundaries of what is possible, guided by our unwavering commitment to harnessing the potential of herbalism and biotechnology."
+        <p className="font-display-serif mb-8 px-2 text-center text-lg font-medium text-stone-500 md:text-2xl">
+          {"Welcome to the heart of innovation, where nature's ingenuity meets cutting-edge science to shape a sustainable future. At our innovation hub, we embark on a relentless quest to push the boundaries of what is possible, guided by our unwavering commitment to harnessing the potential of herbalism and biotechnology."
             .split("")
             .map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ delay: index / 100 }}
+                transition={{ delay: index / 1000 }}
                 viewport={{ once: true }}
               >
                 {char}

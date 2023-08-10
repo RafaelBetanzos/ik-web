@@ -4,7 +4,9 @@ interface HeroProps {
   imgUrl: string;
   title: string;
   body: string;
-  colorName: string;
+  textColor: string;
+  borderColor: string;
+  seeMorePath: string;
 }
 
 export default function Hero(props: HeroProps) {
@@ -27,16 +29,16 @@ export default function Hero(props: HeroProps) {
         viewport={{ once: true }}
       >
         <h1
-          className={`font-display mt-8 inline-block w-full text-${props.colorName} bg-stone-800/60 p-8 text-6xl shadow-2xl backdrop-blur-sm sm:ml-8 sm:w-auto`}
+          className={`font-display mt-8 inline-block w-full ${props.textColor} bg-stone-800/60 p-8 text-6xl shadow-2xl backdrop-blur-sm sm:ml-8 sm:w-auto`}
         >
           {props.title}
         </h1>
       </motion.div>
       <motion.div
-        className={`bottom-0 right-0  w-full rounded-sm border-l-[20px] border-${props.colorName} bg-stone-100 bg-opacity-80 p-12 shadow-xl backdrop-blur-sm backdrop-brightness-150 sm:p-16 lg:absolute lg:w-2/3`}
+        className={`bottom-0 right-0  w-full rounded-sm border-l-[20px] ${props.borderColor} bg-stone-100 bg-opacity-80 p-12 shadow-xl backdrop-blur-sm backdrop-brightness-150 sm:p-16 lg:absolute lg:w-2/3`}
         initial={{ opacity: 0, y: "50%" }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
         <p className="text-md leading-relaxed text-stone-700 sm:text-lg">
@@ -44,10 +46,10 @@ export default function Hero(props: HeroProps) {
         </p>
         <div className="text-right">
           <a
-            href="#"
+            href={props.seeMorePath}
             className="mt-4 flex items-center justify-end gap-4 text-2xl opacity-70"
           >
-            <span className="mt-2">Ver más</span>
+            <span className="mt-2">See more</span>
             <span aria-hidden="true" className="align-middle text-6xl">
               {"->"}
             </span>
