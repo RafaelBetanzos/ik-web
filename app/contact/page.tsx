@@ -8,7 +8,7 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Home() {
+export default function Contact() {
   return (
     <main>
       <NavBar dark={true} />

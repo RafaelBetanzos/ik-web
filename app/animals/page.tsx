@@ -1,18 +1,10 @@
 "use client";
-import Image from "next/image";
 import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import ContactForm from "../components/contact";
-import {
-  BuildingOfficeIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline";
-import Hero from "../components/hero";
 
-export default function Home() {
+export default function Animals() {
   const [scrollPos, setScrollPos] = useState(0);
 
   const handleScroll = () => {
@@ -33,13 +25,6 @@ export default function Home() {
             className="absolute inset-x-0 -z-10 h-screen transform-gpu overflow-hidden"
             aria-hidden="true"
           >
-            {/* <div
-              className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-              style={{
-                clipPath:
-                  "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-              }}
-            /> */}
             <div
               className="relative -z-10 h-full w-full bg-center brightness-[.80]"
               style={{
@@ -49,15 +34,6 @@ export default function Home() {
             />
           </div>
           <div className="mx-auto max-w-6xl py-20 sm:py-[35vh] lg:py-[60vh]">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-start">
-              {/* <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Anunciando x.{" "}
-                <a href="#" className="font-semibold text-indigo-600">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Leer más <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div> */}
-            </div>
             <div className="text-left">
               <motion.h1
                 className="font-display text-xl font-bold tracking-widest text-stone-200 opacity-70 sm:text-4xl"
@@ -77,20 +53,6 @@ export default function Home() {
               >
                 Nurturing Health and Happiness for Our Beloved Companions
               </motion.p>
-              {/* <div className="mt-10 flex items-center justify-start gap-x-6">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get started
-                </a>
-                <a
-                  href="#"
-                  className="text-sm font-semibold leading-6 text-gray-900"
-                >
-                  Learn more <span aria-hidden="true">→</span>
-                </a>
-              </div> */}
             </div>
           </div>
         </div>
@@ -149,12 +111,12 @@ export default function Home() {
 
           <h2 className="mt-4 text-center text-2xl">Natural Cosmetics</h2>
           <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            In our pursuit of animal care excellence, we turn to nature's
+            In our pursuit of animal care excellence, we turn to nature&apos;s
             healing touch. Drawing inspiration from herbalism and biotechnology,
             we unlock the therapeutic potential of natural ingredients to
             address a wide range of animal health concerns. From soothing
             ointments to nutritional supplements, every product we create
-            embodies the essence of nature's gentle yet powerful care.
+            embodies the essence of nature&apos;s gentle yet powerful care.
           </p>
 
           <h2 className="mt-4 text-center text-2xl">
