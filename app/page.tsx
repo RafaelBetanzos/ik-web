@@ -67,9 +67,9 @@ const infoCards = [
     botanical: "/assets/images/botanical-line-05.png",
     stats: [
       { value: 2016, label: "Founded" },
-      { value: 2,    label: "Countries" },
+      { value: 4,    label: "Countries" },
       { value: 4,    label: "Research areas" },
-      { value: 2,    label: "Continents" },
+      { value: 1,    label: "Continent" },
     ],
   },
 ];
@@ -132,9 +132,6 @@ function InfoCards() {
                         <StatCounter to={s.value} />
                       </span>
                       <span className="text-[10px] uppercase tracking-widest text-stone-500">
-                        {s.label}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-widest text-stone-400">
                         {s.label}
                       </span>
                     </div>
@@ -253,7 +250,7 @@ export default function Home() {
         <Hero
           imgUrl="assets/images/innovation.jpg"
           title="Innovation"
-          body="Welcome to the heart of innovation, where nature's ingenuity meets cutting-edge science to shape a sustainable future. At our innovation hub, we embark on a relentless quest to push the boundaries of what is possible, guided by our unwavering commitment to harnessing the potential of herbalism and biotechnology."
+          body="Where nature's ingenuity meets cutting-edge science. We push the boundaries of what is possible — harnessing herbalism and biotechnology to shape a sustainable future."
           textColor="text-cyan-300"
           borderColor="border-cyan-400"
           seeMorePath="/innovation"
@@ -275,7 +272,7 @@ export default function Home() {
         <Hero
           imgUrl="assets/images/animals.jpg"
           title="Animals"
-          body="We extend our passion for nature-inspired solutions to the well-being of our cherished animal companions. Our commitment to animal care revolves around the belief that our furry friends deserve the same level of attention, love, and respect as we afford ourselves. With a deep understanding of the bond between humans and animals, we have dedicated ourselves to crafting innovative and natural products that cater to the health and happiness of our beloved furry companions."
+          body="The same science we apply to human health — devoted to our animal companions. Natural remedies, holistic wellness, and plant-derived care for the animals that share our lives."
           textColor="text-rose-300"
           borderColor="border-rose-400"
           seeMorePath="/animals"
@@ -286,7 +283,7 @@ export default function Home() {
         <Hero
           imgUrl="assets/images/agriculture.jpg"
           title="Agriculture"
-          body="We embrace a vision where human and natural processes coexist in harmony, benefiting both people and the environment. Our commitment to organic agriculture drives us to design products that cater to your garden or orchard's needs while respecting the delicate balance of nature. Whether you're a seasoned gardener or a passionate horticulturist, our range of organic agricultural products is carefully crafted to enhance the health and vitality of your plants without compromising the Earth's delicate ecosystems. We believe that agriculture can and should be sustainable, economically viable, and gentle on the planet, and that's precisely what we offer through our organic solutions."
+          body="Organic solutions for gardens, fields, and indoor spaces — designed to work with nature, not against it. Sustainable, economically viable, and gentle on the planet."
           textColor="text-lime-300"
           borderColor="border-lime-400"
           seeMorePath="/animals"
