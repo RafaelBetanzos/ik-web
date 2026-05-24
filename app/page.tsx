@@ -264,7 +264,7 @@ export default function Home() {
         <Hero
           imgUrl="assets/images/health.jpg"
           title="Health"
-          body="At Ik-Holcán, our cosmetics are meticulously designed to celebrate the harmonious synergy between nature and beauty. Guided by the expertise of our team, we harness the finest elements of herbalism to craft cosmetics that not only enhance your external radiance but also nurture your inner well-being. We believe that nature's bountiful offerings hold the key to unlocking your natural beauty, and our high-quality, purpose-driven ingredients are carefully chosen to care for your health. Immerse yourself in the transformative power of our natural cosmetics, and experience a radiant, luminous glow that embodies the essence of Ik-Holcán's commitment to nature-inspired beauty."
+          body="At Ik-Holcán, health begins in nature. We develop plant-derived pharmaceuticals and natural remedies — proving through rigorous science that traditional medicine works and why. From proprietary formulations to herbal research, our commitment is to expand what medicine can offer. Natural cosmetics are part of that vision too: products crafted from the same botanical expertise, designed to care for your skin and well-being from the outside in."
           textColor="text-amber-300"
           borderColor="border-amber-400"
           seeMorePath="/health"
