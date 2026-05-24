@@ -102,7 +102,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="min-h48 relative overflow-hidden border-y border-stone-800 bg-stone-950">
+      <div className="min-h48 relative overflow-hidden border-y-4 border-slate-700 bg-gradient-to-r from-cyan-700 to-gray-700">
         <div
           style={{
             backgroundImage: `url("assets/images/air.svg")`,
@@ -162,7 +162,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="relative overflow-hidden border-y border-stone-800 bg-stone-950">
+      <div className="relative overflow-hidden border-y-4 border-slate-700  bg-gradient-to-r from-emerald-700 to-gray-700">
         <div
           style={{
             backgroundImage: `url("assets/images/air.svg")`,
