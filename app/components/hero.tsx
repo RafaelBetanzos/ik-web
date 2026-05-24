@@ -9,62 +9,51 @@ interface HeroProps {
   seeMorePath: string;
 }
 
-export default function Hero({ imgUrl, title, body, textColor, borderColor, seeMorePath }: HeroProps) {
+export default function Hero(props: HeroProps) {
   return (
-    <div className="lg:h-hero container relative mx-auto h-auto min-h-[28rem]">
-
-      {/* Background image */}
+    <div className="lg:h-hero container relative mx-auto h-auto">
       <motion.div
-        style={{ backgroundImage: `url("${imgUrl}")` }}
-        initial={{ backgroundSize: "120%", opacity: 0 }}
+        style={{
+          backgroundImage: `url("${props.imgUrl}")`,
+        }}
+        initial={{ backgroundSize: "150%", opacity: 0.2 }}
         whileInView={{ backgroundSize: "100%", opacity: 1 }}
-        transition={{ duration: 12, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="absolute inset-0 mt-12 bg-cover bg-center bg-no-repeat brightness-[0.65]"
-      />
-
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 mt-12 bg-gradient-to-t from-forest/80 via-forest/20 to-transparent" />
-
-      {/* Title pill */}
+        transition={{ duration: 15 }}
+        className="absolute mt-16 h-full w-full bg-cover bg-center bg-no-repeat"
+      ></motion.div>
       <motion.div
-        className="relative"
-        initial={{ opacity: 0, x: "-15%" }}
+        className="lg:absolute"
+        initial={{ opacity: 0, x: "-20%" }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
         <h1
-          className={`font-serif mt-8 inline-block ${textColor} bg-forest/75 backdrop-blur-sm px-8 py-5 text-5xl lg:text-6xl font-light tracking-wide sm:ml-8`}
+          className={`font-display mt-8 inline-block w-full ${props.textColor} bg-stone-800/60 p-8 text-6xl shadow-2xl backdrop-blur-sm sm:ml-8 sm:w-auto`}
         >
-          {title}
+          {props.title}
         </h1>
       </motion.div>
-
-      {/* Info card */}
       <motion.div
-        className={`bottom-0 right-0 w-full lg:absolute lg:w-[58%] bg-cream/95 backdrop-blur-sm border-l-2 ${borderColor} shadow-2xl`}
-        initial={{ opacity: 0, y: "40%" }}
+        className={`bottom-0 right-0  w-full rounded-sm border-l-[20px] ${props.borderColor} bg-stone-100 bg-opacity-80 p-12 shadow-xl backdrop-blur-sm backdrop-brightness-150 sm:p-16 lg:absolute lg:w-2/3`}
+        initial={{ opacity: 0, y: "50%" }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <div className="p-8 sm:p-12">
-          <p className="font-sans text-sm leading-[1.9] text-stone-600 md:text-base">
-            {body}
-          </p>
-          <div className="mt-6 flex items-center justify-end gap-3">
-            <div className="w-8 h-px bg-stone-400" />
-            <a
-              href={seeMorePath}
-              className={`font-mono text-xs tracking-[0.2em] uppercase ${textColor.replace("text-", "text-")} hover:opacity-100 transition-opacity`}
-              style={{ color: "inherit" }}
-            >
-              <span className="text-stone-500 hover:text-stone-800 transition-colors">
-                Explore →
-              </span>
-            </a>
-          </div>
+        <p className="text-md leading-relaxed text-stone-700 sm:text-lg">
+          {props.body}
+        </p>
+        <div className="text-right">
+          <a
+            href={props.seeMorePath}
+            className="mt-4 flex items-center justify-end gap-4 text-2xl opacity-70"
+          >
+            <span className="mt-2">See more</span>
+            <span aria-hidden="true" className="align-middle text-6xl">
+              {"->"}
+            </span>
+          </a>
         </div>
       </motion.div>
     </div>
