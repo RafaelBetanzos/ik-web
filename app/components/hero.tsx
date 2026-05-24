@@ -35,7 +35,7 @@ export default function Hero(props: HeroProps) {
         </h1>
       </motion.div>
       <motion.div
-        className={`bottom-0 right-0  w-full rounded-sm border-l-[20px] ${props.borderColor} bg-stone-100 bg-opacity-80 p-12 shadow-xl backdrop-blur-sm backdrop-brightness-150 sm:p-16 lg:absolute lg:w-2/3`}
+        className={`bottom-0 right-0  w-full rounded-sm border-l-2 ${props.borderColor} bg-stone-100 bg-opacity-80 p-12 shadow-xl backdrop-blur-sm backdrop-brightness-150 sm:p-16 lg:absolute lg:w-2/3`}
         initial={{ opacity: 0, y: "50%" }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

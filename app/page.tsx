@@ -11,6 +11,144 @@ import {
 } from "@heroicons/react/24/outline";
 import Hero from "./components/hero";
 
+function StatCounter({ to }: { to: number }) {
+  const [count, setCount] = useState(0);
+  const [started, setStarted] = useState(false);
+  return (
+    <motion.span
+      onViewportEnter={() => {
+        if (started) return;
+        setStarted(true);
+        let n = 0;
+        const step = Math.ceil(to / 40);
+        const t = setInterval(() => {
+          n += step;
+          if (n >= to) { setCount(to); clearInterval(t); }
+          else setCount(n);
+        }, 28);
+      }}
+      viewport={{ once: true }}
+    >
+      {count}
+    </motion.span>
+  );
+}
+
+const infoCards = [
+  {
+    number: "01",
+    label: "Our Belief",
+    headline: "The wonders of nature are boundless.",
+    body: "Where conventional medicine reaches its limits, nature's wisdom begins. Traditional and herbal medicine deserves rigorous scientific study — to understand not just that it works, but why.",
+    botanical: "/assets/images/botanical-line-01.png",
+    stats: null as null | { value: number; label: string }[],
+  },
+  {
+    number: "02",
+    label: "Our Vision",
+    headline: "Leading the revolution in plant-based medicine.",
+    body: "A future where data-driven science and ancient wisdom become one — and plant-derived drugs are embraced as a cornerstone of healthcare.",
+    botanical: "/assets/images/botanical-line-02.png",
+    stats: null as null | { value: number; label: string }[],
+  },
+  {
+    number: "03",
+    label: "Our Mission",
+    headline: "Plant-based products that enrich lives.",
+    body: "Through rigorous science, ethical practice, and a deep commitment to sustainability — we demonstrate that nature-inspired solutions work.",
+    botanical: "/assets/images/botanical-line-04.png",
+    stats: null as null | { value: number; label: string }[],
+  },
+  {
+    number: "04",
+    label: "Who We Are",
+    headline: "A multidisciplinary team. One purpose.",
+    body: "United by the desire to combine diverse knowledge and propose meaningful solutions — balancing environmental care, animal health, and human well-being.",
+    botanical: "/assets/images/botanical-line-05.png",
+    stats: [
+      { value: 2016, label: "Founded" },
+      { value: 2,    label: "Countries" },
+      { value: 4,    label: "Research areas" },
+      { value: 2,    label: "Continents" },
+    ],
+  },
+];
+
+function InfoCards() {
+  return (
+    <section className="bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {infoCards.map((card, i) => (
+          <motion.div
+            key={card.number}
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+            variants={{ rest: { y: 0 }, hover: { y: -4 } }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="group relative overflow-hidden border border-stone-100 bg-white p-10 md:p-12 cursor-default"
+          >
+            {/* botanical bg — fades in on hover */}
+            <motion.div
+              variants={{ rest: { opacity: 0 }, hover: { opacity: 0.07 } }}
+              transition={{ duration: 0.5 }}
+              className="pointer-events-none absolute inset-0 bg-contain bg-center bg-no-repeat"
+              style={{ backgroundImage: `url('${card.botanical}')` }}
+            />
+
+            {/* green border on hover */}
+            <motion.div
+              variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+              transition={{ duration: 0.3 }}
+              className="pointer-events-none absolute inset-0 border border-primary"
+            />
+
+            <div className="relative z-10 flex h-full flex-col">
+              {/* header row */}
+              <div className="mb-8 flex items-center gap-3">
+                <span className="font-mono text-xs text-stone-300">{card.number}</span>
+                <div className="h-px flex-1 bg-stone-100" />
+                <span className="font-mono text-xs uppercase tracking-widest text-stone-400">
+                  {card.label}
+                </span>
+              </div>
+
+              {/* headline */}
+              <h3 className="font-display-serif mb-5 text-2xl font-medium leading-snug text-stone-800 md:text-3xl">
+                {card.headline}
+              </h3>
+
+              {/* body */}
+              <p className="text-sm font-light leading-relaxed text-stone-500 md:text-base">
+                {card.body}
+              </p>
+
+              {/* stats — only card 04 */}
+              {card.stats && (
+                <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-stone-100 pt-6 sm:grid-cols-4">
+                  {card.stats.map((s) => (
+                    <div key={s.label} className="flex flex-col gap-1">
+                      <span className="font-display text-2xl font-bold text-primary">
+                        <StatCounter to={s.value} />
+                      </span>
+                      <span className="text-[10px] uppercase tracking-widest text-stone-500">
+                        {s.label}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-widest text-stone-400">
+                        {s.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const [scrollPos, setScrollPos] = useState(0);
 
@@ -41,23 +179,21 @@ export default function Home() {
               poster={"/assets/videos/main2.png"}
             />
           </div>
-          <div className="mx-auto max-w-6xl py-20 sm:py-[35vh] lg:py-[60vh]">
-            <div className="text-left">
+          <div className="absolute inset-0 flex flex-col justify-center px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-6xl">
               <motion.h1
-                className="font-display text-xl font-bold tracking-widest text-stone-200 opacity-70 sm:text-4xl"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                className="font-display text-2xl font-bold tracking-widest text-stone-200 opacity-70 sm:text-6xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
               >
                 IK-HOLCÁN
               </motion.h1>
               <motion.p
-                className="font-display mt-36 text-5xl leading-tight text-amber-200 sm:mt-12"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 5 }}
-                viewport={{ once: true }}
+                className="font-display mt-6 text-7xl leading-tight text-amber-200 sm:text-8xl sm:mt-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
               >
                 Embracing Nature&apos;s Wonders: Unveiling the Potential of
                 Traditional Medicine
@@ -67,136 +203,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto max-w-6xl py-12 text-center">
-        <p className="font-display-serif mb-4 px-2 text-xl font-medium text-stone-600 md:text-4xl">
-          {"The wonders of nature are boundless, and through observation, we uncover a myriad of benefits within our reach."
-            .split("")
-            .map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: index / 100 }}
-                viewport={{ once: true }}
-              >
-                {char}
-              </motion.span>
-            ))}
-        </p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          <p className="my-12 px-4 text-sm font-light text-stone-600 md:text-xl">
-            As of today, humanity has mastered the manipulation of matter at
-            atomic levels, leading to significant advancements in healthcare.
-            However, at Ik-Holcán, we believe that when it comes to treating
-            chronic, degenerative, and cancerous diseases, therapies that enable
-            patients to live better and, eventually, prevent adverse health
-            events should be considered. This is where traditional or herbal
-            medicine becomes essential, deserving rigorous study to unveil its
-            effectiveness and the reasons behind it.
-          </p>
-        </motion.div>
-      </div>
-
-      <div className="min-h48 relative overflow-hidden border-y-4 border-slate-700 bg-gradient-to-r from-cyan-700 to-gray-700">
-        <div
-          style={{
-            backgroundImage: `url("assets/images/air.svg")`,
-            backgroundSize: "auto 100%",
-          }}
-          className="absolute h-full w-full opacity-[.03] invert"
-        ></div>
-        <div className="relative z-10 flex items-center justify-center p-12 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <p className="mx-auto text-2xl font-light text-slate-100">
-              Our vision is to be the leading force in revolutionizing
-              plant-based medicine through innovative scientific research and
-              knowledge dissemination.
-            </p>
-            <p className="mx-auto mt-4 text-xl font-light text-slate-100">
-              Ik-Holcán envisions a future where the extraordinary potential of
-              herbal remedies is fully realized, backed by data-driven insights
-              from computational drug discovery and shared through global
-              partnerships and public outreach. Our vision is a world where
-              plant-derived drugs are embraced as a cornerstone of healthcare,
-              promoting enhanced well-being and environmental sustainability for
-              all.
-            </p>
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="container mx-auto max-w-6xl py-12 text-center">
-        <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-          Ik-Holcán is an organization formed by a group of individuals with
-          diverse skills, united by the desire to grow and combine their
-          knowledge to propose meaningful solutions to humanity. We strive to
-          harmonize our solutions with the values of society, maintaining a
-          delicate balance between environmental care, animal health, and human
-          well-being.
-        </p>
-
-        <p className="mt-12 px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-          Our team, with its multidisciplinary abilities, is committed to
-          exploring the potential of traditional medicine in improving the
-          quality of life for individuals while safeguarding the health of our
-          planet and all its inhabitants.
-        </p>
-
-        <p className="mt-12 px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-          At Ik-Holcán, we embrace the boundless potential of nature and the
-          wisdom of traditional medicine, dedicating ourselves to crafting
-          solutions that resonate with the needs of humanity and the
-          environment. Together, we envision a future where nature and science
-          converge, empowering us to lead healthier, more fulfilling lives in
-          harmony with the world around us.
-        </p>
-      </div>
-
-      <div className="relative overflow-hidden border-y-4 border-slate-700  bg-gradient-to-r from-emerald-700 to-gray-700">
-        <div
-          style={{
-            backgroundImage: `url("assets/images/air.svg")`,
-            backgroundSize: "auto 100%",
-          }}
-          className="absolute h-full w-full opacity-[.02] invert"
-        ></div>
-        <div className="relative z-10 flex items-center justify-center p-12 text-center text-white">
-          <motion.div
-            className=""
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <p className="mx-auto text-2xl font-light text-slate-100">
-              Our mission is to provide humanity with plant-based products and
-              services that enrich lives and elevate well-being.
-            </p>
-            <p className="mx-auto mt-4 text-xl font-light text-slate-100">
-              We are dedicated to demonstrating the effectiveness of traditional
-              herbal medicine by harnessing the latest advancements in science
-              and technology, including computer-aided drug discovery and
-              bioinformatics. Through rigorous research, ethical practices, and
-              a commitment to sustainability, we aim to unveil the full
-              potential of plant-derived drugs, promoting their integration into
-              mainstream healthcare. Our passion for scientific exploration and
-              knowledge-sharing drives us to empower individuals and communities
-              with nature-inspired solutions for a healthier, more sustainable
-              future.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+      <InfoCards />
 
       {/* <div className="relative overflow-hidden bg-black shadow-lg">
         <motion.video

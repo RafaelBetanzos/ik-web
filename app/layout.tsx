@@ -1,5 +1,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
+import CustomCursor from "./components/cursor";
 
 const inter = localFont({
   src: [
@@ -40,8 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${merriweather.variable} ${bambino.variable} font-sans`}
+        className={`${inter.variable} ${merriweather.variable} ${bambino.variable} font-sans cursor-none`}
       >
+        <CustomCursor />
         {children}
       </body>
     </html>

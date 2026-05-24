@@ -3,114 +3,262 @@ import Footer from "../components/footer";
 import NavBar from "../components/navbar";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
+/* ── Focus areas ──────────────────────────────── */
+const areas = [
+  {
+    number: "01",
+    label: "Garden",
+    headline: "A thriving garden, without the chemicals.",
+    body: "Our natural garden preparations control pests and nourish plants — leaving them vibrant and free from harmful residues, while protecting the soil and environment around them.",
+    botanical: "/assets/images/botanical-line-01.png",
+  },
+  {
+    number: "02",
+    label: "Field",
+    headline: "Organic farming, made viable.",
+    body: "For farmers and cultivators transitioning to organic agriculture, our products help achieve certification and optimize crop yields — without compromising soil health or surrounding ecosystems.",
+    botanical: "/assets/images/botanical-line-02.png",
+  },
+  {
+    number: "03",
+    label: "Indoor",
+    headline: "Nature inside your home.",
+    body: "Safe, effective alternatives for indoor pest control and plant care — creating a toxin-free living space where your plants thrive and your household stays healthy.",
+    botanical: "/assets/images/botanical-line-04.png",
+  },
+  {
+    number: "04",
+    label: "Sustainability",
+    headline: "Agriculture that works with the planet.",
+    body: "We believe farming can be sustainable, economically viable, and gentle on the Earth. Every product we develop is designed to coexist with natural processes rather than override them.",
+    botanical: "/assets/images/botanical-line-05.png",
+  },
+];
+
+/* ── AreaCard ─────────────────────────────────── */
+function AreaCard({ a }: { a: typeof areas[0] }) {
+  return (
+    <motion.div
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      variants={{ rest: { y: 0 }, hover: { y: -4 } }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="relative overflow-hidden border border-stone-100 bg-white p-10 cursor-default"
+    >
+      <motion.div
+        variants={{ rest: { opacity: 0 }, hover: { opacity: 0.07 } }}
+        transition={{ duration: 0.5 }}
+        className="pointer-events-none absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${a.botanical}')` }}
+      />
+      <motion.div
+        variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+        transition={{ duration: 0.3 }}
+        className="pointer-events-none absolute inset-0 border border-primary"
+      />
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="mb-8 flex items-center gap-3">
+          <span className="font-mono text-xs text-stone-300">{a.number}</span>
+          <div className="h-px flex-1 bg-stone-100" />
+          <span className="font-mono text-xs uppercase tracking-widest text-stone-400">
+            {a.label}
+          </span>
+        </div>
+        <h3 className="font-display-serif mb-4 text-2xl font-medium leading-snug text-stone-800 md:text-3xl">
+          {a.headline}
+        </h3>
+        <p className="text-sm font-light leading-relaxed text-stone-500 md:text-base">
+          {a.body}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ── Page ─────────────────────────────────────── */
 export default function Agriculture() {
   const [scrollPos, setScrollPos] = useState(0);
 
-  const handleScroll = () => {
-    setScrollPos(window.scrollY);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrollPos(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, []);
 
   return (
     <main>
       <NavBar dark={scrollPos > 0} />
-      <div className="h-screen bg-black">
-        <div className="relative isolate h-screen px-6 lg:px-8">
-          <div
-            className="absolute inset-x-0 -z-10 h-screen transform-gpu overflow-hidden"
-            aria-hidden="true"
-          >
-            <div
-              className="bg-left-right relative -z-10 h-full w-full brightness-[.70]"
-              style={{
-                backgroundImage: `url("assets/images/agriculture.jpg")`,
-                backgroundSize: "cover",
-              }}
-            />
-          </div>
-          <div className="mx-auto max-w-6xl py-20 sm:py-[35vh] lg:py-[60vh]">
-            <div className="text-left">
-              <motion.h1
-                className="font-display text-xl font-bold tracking-widest text-stone-200 opacity-70 sm:text-4xl"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-              >
-                Agriculture
-              </motion.h1>
-            </div>
+
+      {/* ── HERO ──────────────────────────────── */}
+      <div className="relative h-screen overflow-hidden bg-black">
+        <div
+          className="absolute inset-0 bg-center bg-cover brightness-[0.55]"
+          style={{ backgroundImage: `url("/assets/images/agriculture.jpg")` }}
+        />
+        <div className="absolute inset-0 flex flex-col justify-center px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-6xl">
+            <motion.p
+              className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Ik-Holcán
+            </motion.p>
+            <motion.h1
+              className="font-display mt-3 text-5xl font-bold tracking-widest text-stone-100 sm:text-[5rem]"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Agriculture
+            </motion.h1>
+            <motion.p
+              className="mt-4 max-w-xl text-4xl font-light leading-snug text-stone-300 sm:text-5xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              Organic solutions that work with nature — not against it.
+            </motion.p>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto max-w-6xl p-4 py-12 text-center ">
-        <p className="font-display-serif mb-8 px-2 text-center text-lg font-medium text-stone-500 md:text-2xl">
-          {"We embrace a vision where human and natural processes coexist in harmony, benefiting both people and the environment. Our commitment to organic agriculture drives us to design products that cater to your garden or orchard's needs while respecting the delicate balance of nature. Whether you're a seasoned gardener or a passionate horticulturist, our range of organic agricultural products is carefully crafted to enhance the health and vitality of your plants without compromising the Earth's delicate ecosystems. We believe that agriculture can and should be sustainable, economically viable, and gentle on the planet, and that's precisely what we offer through our organic solutions."
-            .split("")
-            .map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: index / 1000 }}
-                viewport={{ once: true }}
-              >
-                {char}
-              </motion.span>
+      {/* ── INTRO STATEMENT ───────────────────── */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <motion.p
+            className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            Our vision
+          </motion.p>
+          <motion.p
+            className="font-display-serif mt-6 text-2xl font-medium leading-snug text-stone-700 md:text-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Agriculture can be sustainable, economically viable, and
+            gentle on the planet — all at the same time.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ── AREAS ─────────────────────────────── */}
+      <section className="bg-stone-50 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+              Our products
+            </span>
+            <h2 className="font-display mt-3 text-4xl tracking-wide text-stone-800 md:text-5xl">
+              Where We Work
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {areas.map((a) => (
+              <AreaCard key={a.number} a={a} />
             ))}
-        </p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="flex flex-col gap-4"
-        >
-          <h2 className="mt-4 text-center text-2xl">Garden</h2>
+          </motion.div>
+        </div>
+      </section>
 
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Your garden is a sanctuary of beauty and tranquility, and at
-            Ik-Holcán, we believe that nurturing it should not come at the cost
-            of harming the environment. That&apos;s why our natural garden
-            products are your perfect allies in maintaining a healthy and
-            thriving garden without the use of harmful chemicals. Our
-            preparations are specifically formulated to naturally control pests
-            and provide nourishment to your plants, leaving them vibrant, lush,
-            and free from harmful residues. With Ik-Holcán&apos;s natural garden
-            products, you can create a flourishing garden that reflects your
-            commitment to sustainability and environmental stewardship.
-          </p>
+      {/* ── HARMONY STATEMENT ─────────────────── */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+                Our philosophy
+              </span>
+              <h2 className="font-display mt-4 text-4xl tracking-wide text-stone-800 md:text-5xl">
+                Human processes.<br />Natural harmony.
+              </h2>
+            </motion.div>
+            <motion.p
+              className="text-base font-light leading-relaxed text-stone-500"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              We embrace a vision where cultivation and nature coexist — where
+              a garden, a field, or an indoor space can be productive and
+              healthy without tipping the balance of the ecosystems that sustain
+              them. Our organic agricultural products are the bridge between
+              human ambition and planetary responsibility.
+            </motion.p>
+          </div>
+        </div>
+      </section>
 
-          <h2 className="mt-4 text-center text-2xl">Field</h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            If you are a farmer or cultivator looking to make the transition to
-            organic farming, Ik-Holcán is here to support your journey towards
-            sustainable agriculture. Our products are designed to help you
-            achieve organic certification and optimize your crop yields while
-            preserving the health of the soil and surrounding ecosystems. By
-            partnering with us, you can embark on a path that aligns with
-            nature&apos;s principles, ensuring the long-term viability of your
-            fields and a positive impact on the world around you.
-          </p>
-
-          <h2 className="mt-4 text-center text-2xl">Indoor</h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Your home is your sanctuary, and at Ik-Holcán, we believe that it
-            should be free from harmful chemicals. Our natural indoor products
-            provide you with safe and effective alternatives for pest control
-            and plant care, ensuring a healthy living environment for you and
-            your loved ones. With our indoor preparations, you can create a
-            nurturing and toxin-free space where your plants thrive, and you can
-            enjoy the beauty of nature indoors.
-          </p>
-        </motion.div>
-      </div>
+      {/* ── CTA ───────────────────────────────── */}
+      <section className="bg-stone-50 py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+              Get in touch
+            </span>
+            <h2 className="font-display mt-4 text-4xl tracking-wide text-stone-800 md:text-5xl">
+              Grow with us.
+            </h2>
+            <p className="mt-6 text-base font-light leading-relaxed text-stone-500">
+              Whether you manage a garden, an orchard, or large-scale fields —
+              we want to help you transition to solutions that are better for
+              your crops and for the planet.
+            </p>
+            <Link
+              href="/#contact"
+              className="mt-10 inline-flex items-center gap-2 border border-stone-800 px-8 py-3 font-mono text-xs uppercase tracking-widest text-stone-800 transition-all duration-200 hover:bg-stone-800 hover:text-white"
+            >
+              Contact us
+              <svg
+                className="h-3 w-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       <Footer />
     </main>

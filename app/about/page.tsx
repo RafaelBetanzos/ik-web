@@ -5,661 +5,456 @@ import NavBar from "../components/navbar";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+/* ── Values data ──────────────────────────────── */
+const values = [
+  {
+    icon: "/assets/images/honestidad.svg",
+    label: "Honesty",
+    body: "We uphold the highest standards of integrity and transparency in all our endeavors, fostering trust among our stakeholders.",
+    botanical: "/assets/images/botanical-line-01.png",
+  },
+  {
+    icon: "/assets/images/responsabilidad.svg",
+    label: "Responsibility",
+    body: "We take ownership of our actions and decisions, ensuring accountability for the impact of our work on individuals and the environment.",
+    botanical: "/assets/images/botanical-line-02.png",
+  },
+  {
+    icon: "/assets/images/etica.svg",
+    label: "Ethics",
+    body: "Our conduct is grounded in ethical principles, promoting fair and principled practices throughout our operations.",
+    botanical: "/assets/images/botanical-line-03.png",
+  },
+  {
+    icon: "/assets/images/integridad.svg",
+    label: "Integrity",
+    body: "We adhere to strong moral principles, safeguarding the authenticity and reliability of our research and communications.",
+    botanical: "/assets/images/botanical-line-04.png",
+  },
+  {
+    icon: "/assets/images/solidaridad.svg",
+    label: "Solidarity",
+    body: "Collaboration is at the heart of our approach, fostering partnerships that leverage collective expertise for greater impact.",
+    botanical: "/assets/images/botanical-line-05.png",
+  },
+];
+
+/* ── History timeline ─────────────────────────── */
+const timeline = [
+  {
+    year: "2016",
+    title: "The Agrobox",
+    body: "A passion for cultivation and sustainable living led to the creation of the Agrobox — an innovative agronomic box designed for indoor crop cultivation. The foundation of everything to come.",
+  },
+  {
+    year: "2017",
+    title: "Natural Anti-Inflammatory",
+    body: "Discovering the significance of secondary metabolites, we designed a natural anti-inflammatory ointment that garnered positive feedback and proved beneficial to many.",
+  },
+  {
+    year: "2019",
+    title: "Master's Research",
+    body: "A master's degree deepened our understanding of metabolites and their functions — fueling the determination to identify novel natural compounds for eco-friendly pharmaceuticals.",
+  },
+  {
+    year: "2022",
+    title: "PhD & Computational Discovery",
+    body: "Currently pursuing a PhD in computer-aided drug discovery, refining expertise in the quest for groundbreaking therapeutic solutions backed by bioinformatics.",
+  },
+  {
+    year: "Today",
+    title: "Global Partnerships",
+    body: "Research agreements with prestigious institutions — including CIAD in Mexico and the Argentinean Association of Bioinformatics and Computational Biology — enhancing the exchange of knowledge.",
+  },
+];
+
+/* ── Sustainability pillars ───────────────────── */
+const pillars = [
+  {
+    number: "01",
+    label: "Nature-Inspired",
+    headline: "Rooted in the planet's wisdom.",
+    body: "Every product undergoes rigorous assessment to align with our sustainability principles — from sourcing organic raw materials to eco-friendly production methods that minimize ecological footprint.",
+    botanical: "/assets/images/botanical-line-01.png",
+  },
+  {
+    number: "02",
+    label: "Science-Driven",
+    headline: "Rigorous research, responsible outcomes.",
+    body: "We actively invest in research that promotes sustainable agriculture, conservation, and environmental protection — integrating scientific advancements with traditional knowledge.",
+    botanical: "/assets/images/botanical-line-03.png",
+  },
+  {
+    number: "03",
+    label: "Ethical Partnerships",
+    headline: "Collective effort, positive change.",
+    body: "Our collaborations extend beyond scientific exploration — we seek alliances with organizations that share our commitment to sustainability and ethical practices.",
+    botanical: "/assets/images/botanical-line-05.png",
+  },
+];
+
+/* ── Team categories ──────────────────────────── */
+const teamTags = [
+  "Expert Scientists",
+  "Bioinformaticians",
+  "Herbalists",
+  "Traditional Knowledge Experts",
+  "Ethics & Sustainability Specialists",
+  "Passionate Communicators",
+  "Collaborators & Partners",
+];
+
+/* ── ValueCard ────────────────────────────────── */
+function ValueCard({ v, i }: { v: typeof values[0]; i: number }) {
+  return (
+    <motion.div
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      variants={{ rest: { y: 0 }, hover: { y: -4 } }}
+      transition={{ duration: 0.3 }}
+      className="relative overflow-hidden border border-stone-100 bg-white p-8 cursor-default"
+      style={{ animationDelay: `${i * 0.1}s` }}
+    >
+      <motion.div
+        variants={{ rest: { opacity: 0 }, hover: { opacity: 0.07 } }}
+        transition={{ duration: 0.5 }}
+        className="pointer-events-none absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${v.botanical}')` }}
+      />
+      <motion.div
+        variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+        transition={{ duration: 0.3 }}
+        className="pointer-events-none absolute inset-0 border border-primary"
+      />
+      <div className="relative z-10">
+        <Image
+          src={v.icon}
+          width={48}
+          height={48}
+          alt={v.label}
+          className="mb-5 opacity-60"
+        />
+        <h3 className="font-display-serif mb-3 text-xl font-medium text-stone-800">
+          {v.label}
+        </h3>
+        <p className="text-sm font-light leading-relaxed text-stone-500">
+          {v.body}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ── PillarCard ───────────────────────────────── */
+function PillarCard({ p, i }: { p: typeof pillars[0]; i: number }) {
+  return (
+    <motion.div
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      variants={{ rest: { y: 0 }, hover: { y: -4 } }}
+      transition={{ duration: 0.3 }}
+      className="relative overflow-hidden border border-stone-100 bg-white p-8 cursor-default"
+    >
+      <motion.div
+        variants={{ rest: { opacity: 0 }, hover: { opacity: 0.07 } }}
+        transition={{ duration: 0.5 }}
+        className="pointer-events-none absolute inset-0 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('${p.botanical}')` }}
+      />
+      <motion.div
+        variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+        transition={{ duration: 0.3 }}
+        className="pointer-events-none absolute inset-0 border border-primary"
+      />
+      <div className="relative z-10">
+        <div className="mb-6 flex items-center gap-3">
+          <span className="font-mono text-xs text-stone-300">{p.number}</span>
+          <div className="h-px flex-1 bg-stone-100" />
+          <span className="font-mono text-xs uppercase tracking-widest text-stone-400">{p.label}</span>
+        </div>
+        <h3 className="font-display-serif mb-4 text-xl font-medium leading-snug text-stone-800 md:text-2xl">
+          {p.headline}
+        </h3>
+        <p className="text-sm font-light leading-relaxed text-stone-500">
+          {p.body}
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ── Page ─────────────────────────────────────── */
 export default function About() {
   const [scrollPos, setScrollPos] = useState(0);
 
-  const handleScroll = () => {
-    setScrollPos(window.scrollY);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrollPos(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, []);
 
   return (
     <main>
       <NavBar dark={scrollPos > 0} />
-      <div className="h-screen bg-black">
-        <div className="relative isolate h-screen px-6 lg:px-8">
-          <div
-            className="absolute inset-x-0 -z-10 h-screen transform-gpu overflow-hidden"
-            aria-hidden="true"
+
+      {/* ── HERO ──────────────────────────────── */}
+      <div className="relative h-screen overflow-hidden bg-black">
+        <div
+          className="absolute inset-0 bg-center bg-cover brightness-[0.55]"
+          style={{ backgroundImage: `url("/assets/images/about.jpg")` }}
+        />
+        <div className="absolute inset-0 flex flex-col justify-center px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-6xl">
+            <motion.p
+              className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Ik-Holcán
+            </motion.p>
+            <motion.h1
+              className="font-display mt-3 text-5xl font-bold tracking-widest text-stone-100 sm:text-[5rem]"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Who We Are
+            </motion.h1>
+            <motion.p
+              className="mt-4 max-w-xl text-4xl font-light leading-snug text-stone-300 sm:text-5xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              A multidisciplinary team united by the belief that nature and
+              science must converge.
+            </motion.p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MISSION STATEMENT ─────────────────── */}
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <motion.p
+            className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
           >
-            <div
-              className="relative -z-10 h-full w-full bg-center brightness-[.90]"
-              style={{
-                backgroundImage: `url("assets/images/about.jpg")`,
-                backgroundSize: "cover",
-              }}
-            />
-          </div>
-          <div className="mx-auto max-w-6xl py-20 sm:py-[35vh] lg:py-[60vh]">
-            <div className="text-left">
-              <motion.h1
-                className="font-display text-xl font-bold tracking-widest text-stone-200 opacity-70 sm:text-4xl"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-              >
-                Who we are
-              </motion.h1>
-            </div>
-          </div>
+            Our purpose
+          </motion.p>
+          <motion.p
+            className="font-display-serif mt-6 text-2xl font-medium leading-snug text-stone-700 md:text-4xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            To provide humanity with plant-based products and services that
+            enhance quality of life — by harnessing cutting-edge science to
+            substantiate the power of traditional medicine.
+          </motion.p>
         </div>
-      </div>
+      </section>
 
-      <div className="container mx-auto max-w-6xl py-12 text-center">
-        <p className="font-display-serif mb-4 px-2 text-xl font-medium text-stone-600 md:text-4xl">
-          {"At Ik-Holcán, we are driven by a singular mission - to provide humanity with plant-based products and services that enhance people's quality of life. Our goal is to demonstrate the efficacy of traditional herbal medicine by harnessing the power of cutting-edge scientific advancements. We firmly believe in the potential of plant-derived drugs, and to substantiate this belief, we employ state-of-the-art tools, ranging from computational biology and laboratory analysis to clinical trials."
-            .split("")
-            .map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: index / 100 }}
-                viewport={{ once: true }}
-              >
-                {char}
-              </motion.span>
+      {/* ── VALUES ────────────────────────────── */}
+      <section className="bg-stone-50 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-12 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+              What drives us
+            </span>
+            <h2 className="font-display mt-3 text-4xl tracking-wide text-stone-800 md:text-5xl">
+              Our Values
+            </h2>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 gap-px bg-stone-100 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {values.map((v, i) => (
+              <ValueCard key={v.label} v={v} i={i} />
             ))}
-        </p>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="flex flex-col gap-4"
-        >
-          <h2 className="mt-4 text-center text-2xl">
-            Our Passion: Advancing Drug Discovery Through Computer-Aided
-            Techniques
-          </h2>
-
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Ik-Holcán is dedicated to pioneering drug discovery through
-            computational approaches. By combining traditional herbal knowledge
-            with modern bioinformatics, our team of expert scientists strives to
-            unlock the therapeutic potential of plant-based compounds. Through
-            the convergence of data-driven insights and centuries-old wisdom, we
-            aim to revolutionize the field of natural medicine.
-          </p>
-
-          <h2 className="mt-4 text-center text-2xl">
-            Our Core Values: Integrity, Humanity, and Environmental Stewardship
-          </h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Honesty, respect, responsibility, humanism, humanitarianism,
-            professional ethics, integrity, and solidarity are the bedrock of
-            Ik-Holcán&apos;s values. As we explore the boundaries of plant-based
-            medicine, we remain committed to ethical practices and a profound
-            sense of responsibility towards the well-being of individuals and
-            communities alike.
-          </p>
-
-          <h2 className="mt-4 text-center text-2xl">
-            Celebrating Milestones: Blending Science and Entrepreneurship
-          </h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Ik-Holcán&apos;s journey has been punctuated by numerous milestones.
-            Our ventures have garnered prestigious awards in entrepreneurship,
-            and our contributions to the field of bioinformatics have earned
-            recognition through publications and presentations at esteemed
-            conferences on bioinformatics and climate change.
-          </p>
-
-          <h2 className="mt-4 text-center text-2xl">
-            Promoting Scientific Awareness: Embracing Patents and Knowledge
-            Sharing
-          </h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            As fervent advocates of scientific dissemination, we actively engage
-            in patenting our discoveries. By securing intellectual property
-            rights, we strive to foster an environment of knowledge-sharing,
-            encouraging collaboration for the greater good of society.
-          </p>
-
-          <h2 className="mt-4 text-center text-2xl">
-            Sustainability and Environmental Harmony
-          </h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            Ik-Holcán is committed to sustainability. Our dedication to
-            environmental stewardship drives us to adopt eco-friendly processes
-            and seek innovative solutions to minimize the ecological impact of
-            our endeavors. We firmly believe that it is possible to enhance
-            lives while reducing our ecological footprint through
-            knowledge-driven initiatives.
-          </p>
-
-          <h2 className="mt-4 text-center text-2xl">
-            Empowering a Better Future: A Multidisciplinary Pursuit
-          </h2>
-          <p className="px-4 text-justify text-sm font-light text-stone-600 md:text-lg">
-            We strongly believe that progress thrives in a multidisciplinary
-            environment. At Ik-Holcán, our team of scientific experts
-            collaborates across diverse fields, nurturing a culture of
-            cross-disciplinary exploration. By promoting an integrated approach
-            to research, we envision a future where improved well-being and
-            reduced environmental impact coexist harmoniously.
-          </p>
-        </motion.div>
-      </div>
-
-      <section className="relative isolate mx-auto mb-24 mt-24 flex flex-col justify-center overflow-hidden pb-24 text-center shadow-xl">
-        <div className="absolute inset-y-0 -z-10 h-full w-[100%] bg-[radial-gradient(circle_at_center_left,_var(--tw-gradient-stops))] from-stone-50 via-stone-100 to-stone-300"></div>
-
-        <div className="container mx-auto px-4">
-          <h1 className="font-display my-24 text-6xl tracking-wide text-stone-800">
-            Our values
-          </h1>
-
-          <div className="mb-24 flex flex-wrap justify-center gap-24 text-center">
-            <div className="flex w-96 flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  className="sepia-[.35]"
-                  src="assets/images/honestidad.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Honesty
-                </h1>
-                <p className="text-md text-center leading-tight text-stone-500">
-                  We uphold the highest standards of integrity and transparency
-                  in all our endeavors, fostering trust among our stakeholders.
-                </p>
-              </motion.div>
-            </div>
-            <div className="flex w-96 flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  className="sepia-[.35]"
-                  src="assets/images/responsabilidad.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Responsibility
-                </h1>
-                <p className="text-md text-center leading-tight text-stone-500">
-                  We take ownership of our actions and decisions, ensuring
-                  accountability for the impact of our work on individuals and
-                  the environment.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-24 text-center">
-            <div className="flex w-96 flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  className="sepia-[.35]"
-                  src="assets/images/etica.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Ethics
-                </h1>
-                <p className="text-md text-center leading-tight text-stone-500">
-                  We are driven by a deep commitment to contribute positively to
-                  society, striving to improve lives through our plant-based
-                  products and services. Our conduct is grounded in ethical
-                  principles, promoting fair and principled practices throughout
-                  our operations.
-                </p>
-              </motion.div>
-            </div>
-            <div className="flex w-96 flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  className="sepia-[.35]"
-                  src="assets/images/integridad.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Integrity
-                </h1>
-                <p className="text-md text-center leading-tight text-stone-500">
-                  We adhere to strong moral principles, safeguarding the
-                  authenticity and reliability of our research and
-                  communications.
-                </p>
-              </motion.div>
-            </div>
-            <div className="flex w-96 flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  className="sepia-[.35]"
-                  src="assets/images/solidaridad.svg"
-                  width={150}
-                  height={150}
-                  alt=""
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h1 className="font-display-serif mb-4 mt-4 text-4xl tracking-wide">
-                  Solidarity
-                </h1>
-                <p className="text-md text-center leading-tight text-stone-500">
-                  Collaboration is at the heart of our approach, fostering
-                  partnerships that leverage collective expertise for greater
-                  impact.
-                </p>
-              </motion.div>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="p-12">
-        <div className="container mx-auto">
-          <h1 className="font-display mb-12 text-center text-6xl tracking-wide">
-            Our Team
-          </h1>
-          <div className="flex flex-col gap-4">
-            <p className="mb-4 text-xl">
-              Ik-Holcán&apos;s team is a diverse and passionate group of experts
-              who bring together a wide range of skills and knowledge. Comprised
-              of scientists, researchers, bioinformaticians, herbalists, and
-              professionals from various disciplines, the team is united by a
-              shared vision to advance plant-based medicine through cutting-edge
-              science and ethical practices.
-            </p>
+      {/* ── TEAM ──────────────────────────────── */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+              The people
+            </span>
+            <h2 className="font-display mt-3 text-4xl tracking-wide text-stone-800 md:text-5xl">
+              Our Team
+            </h2>
+          </motion.div>
 
-            <h4 className="font-bold">Expert Scientists</h4>
-            <p>
-              At the core of Ik-Holcán&apos;s team are dedicated and
-              accomplished scientists with expertise in biotechnology,
-              bioinformatics, computational biology, and drug discovery. They
-              are driven by an insatiable curiosity to unlock the potential of
-              plant-derived compounds and leverage the latest technological
-              tools for their research.
-            </p>
-
-            <h4 className="font-bold">
-              Herbalists and Traditional Knowledge Experts
-            </h4>
-            <p>
-              Working in harmony with the scientific team are herbalists and
-              traditional knowledge experts who contribute invaluable wisdom and
-              understanding of centuries-old herbal remedies. Their insights
-              help bridge the gap between traditional healing practices and
-              modern research.
-            </p>
-
-            <h4 className="font-bold">
-              Ethics and Sustainability Professionals
-            </h4>
-            <p>
-              Ensuring that every step aligns with Ik-Holcán&apos;s values, the
-              team includes professionals well-versed in ethics, sustainability,
-              and responsible practices. They ensure that the company&apos;s
-              contributions are not only effective but also aligned with a
-              profound sense of responsibility towards society and the
-              environment.
-            </p>
-
-            <h4 className="font-bold">Collaborators and Partners</h4>
-            <p>
-              Ik-Holcán&apos;s team also includes a network of collaborators and
-              partners, including academic institutions, research organizations,
-              and industry experts. These collaborations foster a
-              multidisciplinary approach to research and enhance the collective
-              impact of their efforts.
-            </p>
-
-            <h4 className="font-bold">Passionate Communicators</h4>
-            <p>
-              To disseminate their findings and knowledge, the team includes
-              skilled communicators who are adept at translating complex
-              scientific concepts into accessible language. They engage in
-              public outreach, publish research papers, and share patents to
-              promote awareness and understanding of plant-based medicine.
-            </p>
-
-            <h4 className="font-bold">Inclusivity and Diversity Advocates</h4>
-            <p>
-              Embracing the values of respect and solidarity, the team is
-              committed to promoting inclusivity and diversity within the
-              organization and beyond. They recognize the value of diverse
-              perspectives in driving innovation and addressing global
-              challenges.
-            </p>
-
-            <p>
-              As a cohesive unit, Ik-Holcán&apos;s team embodies the
-              company&apos;s mission and values, working collaboratively to
-              explore the vast potential of plant-based medicine, improve the
-              quality of life for individuals, and contribute to a more
-              sustainable future.
-            </p>
-          </div>
-
-          {/* <div className="mt-12 flex flex-wrap justify-center gap-10">
-            <div className="flex flex-col items-center">
-              <div
-                style={{
-                  backgroundImage: `url("assets/images/equipo/rafa.png")`,
-                  backgroundSize: "auto 100%",
-                  backgroundPosition: "center",
-                }}
-                className="h-64 w-64 rounded-xl object-cover shadow-xl"
-              ></div>
-
-              <h1 className="font-display-serif my-4 text-4xl">
-                Rafael Betanzos
-              </h1>
-              <div className="text-xs text-stone-600">
-                <p>
-                  Msc. Ciencias de la vida (Biomedicina y bionanotecnología).{" "}
-                </p>
-                <p>Área de experiencia: Bioinformática y diseño de fármacos.</p>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-start">
+            {/* Rafael card */}
+            <motion.div
+              className="flex flex-col items-start gap-6 sm:flex-row"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-sm shadow-lg">
+                <Image
+                  src="/assets/images/equipo/rafa.png"
+                  fill
+                  alt="Rafael Betanzos"
+                  className="object-cover"
+                />
               </div>
+              <div>
+                <span className="font-mono text-xs uppercase tracking-widest text-primary">
+                  Founder & Lead Researcher
+                </span>
+                <h3 className="font-display-serif mt-1 text-2xl font-medium text-stone-800">
+                  Rafael Betanzos
+                </h3>
+                <div className="mt-2 h-px w-8 bg-primary" />
+                <p className="mt-3 text-sm font-light leading-relaxed text-stone-500">
+                  MSc. Life Sciences (Biomedicine & Bionanotechnology). Expert
+                  in bioinformatics and computer-aided drug discovery. Currently
+                  pursuing a PhD at the intersection of traditional medicine and
+                  computational biology.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Team disciplines */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <p className="mb-6 text-sm font-light leading-relaxed text-stone-500">
+                Ik-Holcán&apos;s team is a diverse group of experts united by a
+                shared vision. We combine scientific rigor with traditional
+                wisdom, technical expertise with ethical commitment.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {teamTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-stone-200 bg-stone-50 px-4 py-1.5 text-xs font-light tracking-wide text-stone-600 transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── HISTORY TIMELINE ──────────────────── */}
+      <section className="bg-stone-50 py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <motion.div
+            className="mb-16 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+              Since 2016
+            </span>
+            <h2 className="font-display mt-3 text-4xl tracking-wide text-stone-800 md:text-5xl">
+              Our History
+            </h2>
+          </motion.div>
+
+          <div className="relative">
+            {/* vertical line */}
+            <div className="absolute left-[2.75rem] top-0 h-full w-px bg-stone-200 sm:left-[4.5rem]" />
+
+            <div className="flex flex-col gap-0">
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={item.year}
+                  className="relative flex gap-6 pb-12 sm:gap-10"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  {/* year badge */}
+                  <div className="relative z-10 flex w-20 shrink-0 flex-col items-center sm:w-32">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-primary bg-white">
+                      <div className="h-2 w-2 rounded-full bg-primary" />
+                    </div>
+                    <span className="mt-2 font-mono text-xs font-semibold text-primary">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  {/* content */}
+                  <div className="pb-2 pt-1">
+                    <h3 className="font-display-serif text-lg font-medium text-stone-800 md:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm font-light leading-relaxed text-stone-500">
+                      {item.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </div> */}
-        </div>
-      </section>
-
-      <section className="p-12">
-        <div className="container mx-auto">
-          <h1 className="font-display mb-12 text-center text-4xl tracking-wide md:text-6xl">
-            Supervisory Board
-          </h1>
-          <div className="flex flex-col gap-4">
-            <h4 className="font-bold">Independent Directors</h4>
-            <p>
-              Supervisory boards often include independent directors who are not
-              involved in the day-to-day operations of the company. These
-              directors bring diverse expertise and experience from various
-              industries and can offer impartial advice and oversight.
-            </p>
-
-            <h4 className="font-bold">Industry Experts</h4>
-            <p>
-              Having individuals with extensive knowledge and experience in the
-              biotechnology, pharmaceuticals, or related industries can be
-              highly beneficial. Their expertise can help guide strategic
-              decisions and ensure that the company remains competitive and
-              aligned with industry trends.
-            </p>
-
-            <h4 className="font-bold">Scientists and Researchers</h4>
-            <p>
-              Given Ik-Holcán&apos;s focus on biotechnology and plant-based
-              medicine, including scientists and researchers with expertise in
-              these fields can provide invaluable insights into the
-              company&apos;s research and development efforts.
-            </p>
-
-            <h4 className="font-bold">Ethics and Sustainability Specialists</h4>
-            <p>
-              Considering Ik-Holcán&apos;s commitment to ethical practices and
-              sustainability, including experts in these areas on the
-              supervisory board can ensure that the company&apos;s actions align
-              with its values.
-            </p>
-
-            <h4 className="font-bold">Finance and Legal Professionals</h4>
-            <p>
-              It&apos;s essential to have individuals with financial and legal
-              acumen on the supervisory board to oversee financial reporting,
-              compliance, and risk management.
-            </p>
           </div>
         </div>
       </section>
 
-      <section className="p-12">
-        <div className="container mx-auto">
-          <h1 className="font-display mb-12 text-center text-6xl tracking-wide">
-            History
-          </h1>
-          <div className="flex flex-col gap-4">
-            <h4 className="font-bold">
-              The History of Ik-Holcán: Blending Nature and Science for a
-              Sustainable Future
-            </h4>
-            <p>
-              Ik-Holcán&apos;s story began in 2016, shaped by a deep connection
-              to nature and a desire to explore the potential of herbal
-              remedies. Growing up in a household where natural remedies were
-              embraced, the founder, driven by curiosity and a sense of
-              responsibility, embarked on a journey that would transform into a
-              remarkable biotechnological venture.
-            </p>
-            <p>
-              In 2016, the founder&apos;s passion for cultivation and
-              sustainable living led to the creation of the Agrobox, an
-              innovative agronomic box designed for indoor crop cultivation.
-              This early project laid the foundation for what was to come.
-            </p>
-            <p>
-              As the founder delved into the world of biotechnology during their
-              engineering studies, a groundbreaking realization occurred.
-              Discovering the significance of secondary metabolites, they
-              recognized the untapped potential of natural compounds for
-              therapeutic applications in humans, animals, and agriculture while
-              safeguarding the environment. From 2017 to 2019, fueled by this
-              newfound insight, the founder designed a natural anti-inflammatory
-              ointment that garnered positive feedback and proved beneficial to
-              many.
-            </p>
-            <p>
-              Their journey of discovery continued as they pursued a
-              master&apos;s degree, deepening their understanding of metabolites
-              and their functions. This period fueled their determination to
-              identify novel natural compounds that could serve as the basis for
-              eco-friendly pharmaceuticals.
-            </p>
-            <p>
-              With an unwavering commitment to knowledge expansion, the founder
-              is currently pursuing a Ph.D. in computer-aided drug discovery,
-              refining their expertise in the quest for groundbreaking
-              therapeutic solutions.
-            </p>
-            <p>
-              Throughout the journey, the founder&apos;s vision of a sustainable
-              and impactful enterprise persisted. Ik-Holcán&apos;s mission
-              revolves around seeking compounds that benefit humanity and the
-              environment, focusing on medicines and agricultural products. A
-              profound desire to minimize environmental impact led to a
-              conscious choice of sourcing organic raw materials and
-              implementing waste reduction measures.
-            </p>
-            <p>
-              Collaboration became a cornerstone of Ik-Holcán&apos;s growth. The
-              company formed research agreements with prestigious institutions,
-              such as the CIAD in Mexico and the Argentinean Association of
-              Bioinformatics and Computational Biology, enhancing the exchange
-              of knowledge and expertise.
-            </p>
-            <p>
-              As the sole founder, the visionary leader envisions Ik-Holcán
-              transcending borders and becoming a global enterprise. By merging
-              nature-inspired remedies with cutting-edge science, Ik-Holcán
-              aspires to address global health and environmental challenges
-              while cultivating a sustainable future for all.
-            </p>
-            <p>
-              Ik-Holcán&apos;s journey exemplifies the power of combining
-              traditional wisdom with modern advancements, fostering a company
-              that embraces nature&apos;s potential, scientific rigor, and a
-              profound sense of responsibility for the well-being of people and
-              the planet. The future holds the promise of a flourishing global
-              enterprise that reshapes healthcare, agriculture, and
-              environmental stewardship for generations to come.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* ── SUSTAINABILITY ────────────────────── */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div
+            className="mb-12 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <span className="font-mono text-xs uppercase tracking-[0.3em] text-stone-400">
+              Our commitment
+            </span>
+            <h2 className="font-display mt-3 text-4xl tracking-wide text-stone-800 md:text-5xl">
+              Sustainability
+            </h2>
+          </motion.div>
 
-      <section className="p-12">
-        <div className="container mx-auto">
-          <h1 className="font-display mb-4 text-center text-4xl tracking-wide md:text-6xl">
-            Sustainability
-          </h1>
-          <h1 className="font-display mb-12 text-center text-4xl tracking-wide">
-            Our approach
-          </h1>
-          <div className="flex flex-col gap-4">
-            <h4 className="font-bold">
-              Sustainability Approach: Embracing Nature, Empowering Change
-            </h4>
-
-            <ul className="flex list-decimal flex-col gap-2">
-              <li>
-                Nature-Inspired Solutions: Our journey began with a profound
-                appreciation for nature&apos;s wisdom. We seek to harness the
-                power of plant-based remedies and sustainable agricultural
-                practices, guided by the belief that nature provides us with
-                invaluable resources for healing and nourishment.
-              </li>
-              <li>
-                Eco-Friendly Products: Every product we develop undergoes
-                rigorous assessment to ensure it aligns with our sustainability
-                principles. From sourcing organic and ethically cultivated raw
-                materials to employing eco-friendly production methods, we
-                prioritize minimizing our ecological footprint.
-              </li>
-              <li>
-                Waste Reduction: Conscious waste management is a key pillar of
-                our sustainability efforts. We implement innovative measures to
-                reduce waste generation, striving for a circular approach that
-                maximizes resource efficiency and minimizes environmental
-                impact.
-              </li>
-              <li>
-                Green Energy: We actively seek renewable energy sources to power
-                our facilities and operations. Embracing solar, wind, and other
-                green energy options, we reduce our reliance on non-renewable
-                resources and lower our carbon emissions.
-              </li>
-              <li>
-                Biodiversity Conservation: We are staunch advocates for
-                biodiversity preservation. As we explore the vast potential of
-                herbal remedies, we support sustainable harvesting practices and
-                engage in projects that protect endangered plant species and
-                their ecosystems.
-              </li>
-              <li>
-                Ethical Partnerships: Our collaborations and partnerships extend
-                beyond scientific exploration. We seek alliances with
-                organizations and suppliers that share our commitment to
-                sustainability and ethical practices, fostering a collective
-                effort towards positive change.
-              </li>
-              <li>
-                Scientific Research for Sustainability: We actively invest in
-                research initiatives that promote sustainable agriculture,
-                conservation, and environmental protection. By integrating
-                scientific advancements with traditional knowledge, we drive
-                innovation that benefits both people and the planet.
-              </li>
-              <li>
-                Public Awareness: We consider education and public awareness
-                essential in creating a more sustainable world. Through public
-                outreach and educational programs, we empower individuals with
-                knowledge about sustainable living and the impact of their
-                choices.
-              </li>
-              <li>
-                Continuous Improvement: Sustainability is a journey, and we
-                understand the need for continuous improvement. We regularly
-                assess and refine our practices, seeking innovative solutions
-                that further enhance our environmental and social contributions.
-              </li>
-              <li>
-                Advocacy for Global Impact: Beyond our immediate sphere of
-                influence, we strive to be agents of change on a global scale.
-                By advocating for sustainable practices in the biotechnology and
-                pharmaceutical industries, we aim to inspire collective action
-                towards a more sustainable future.
-              </li>
-            </ul>
-            <p>
-              Our sustainability approach at Ik-Holcán is a testament to our
-              dedication to preserving the beauty and richness of nature while
-              advancing biotechnological solutions for the benefit of all. We
-              envision a world where sustainability is not just a commitment but
-              a way of life, and we work tirelessly to turn that vision into a
-              tangible reality. Together, we can create a harmonious coexistence
-              between humanity and the environment, empowering positive change
-              for generations to come.
-            </p>
-          </div>
+          <motion.div
+            className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-3"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {pillars.map((p, i) => (
+              <PillarCard key={p.number} p={p} i={i} />
+            ))}
+          </motion.div>
         </div>
       </section>
 
