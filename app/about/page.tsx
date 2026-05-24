@@ -263,9 +263,8 @@ export default function About() {
 
       {/* ── VALUES ────────────────────────────── */}
       <section className="bg-stone-50 py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12 text-center">
           <motion.div
-            className="mb-12 text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -277,19 +276,18 @@ export default function About() {
               Our Values
             </h2>
           </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-px bg-stone-100 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {values.map((v, i) => (
-              <ValueCard key={v.label} v={v} i={i} />
-            ))}
-          </motion.div>
         </div>
+        <motion.div
+          className="grid grid-cols-1 gap-px bg-stone-100 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {values.map((v, i) => (
+            <ValueCard key={v.label} v={v} i={i} />
+          ))}
+        </motion.div>
       </section>
 
       {/* ── TEAM ──────────────────────────────── */}
@@ -429,9 +427,8 @@ export default function About() {
 
       {/* ── SUSTAINABILITY ────────────────────── */}
       <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12 text-center">
           <motion.div
-            className="mb-12 text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -443,19 +440,18 @@ export default function About() {
               Sustainability
             </h2>
           </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-3"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {pillars.map((p, i) => (
-              <PillarCard key={p.number} p={p} i={i} />
-            ))}
-          </motion.div>
         </div>
+        <motion.div
+          className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {pillars.map((p, i) => (
+            <PillarCard key={p.number} p={p} i={i} />
+          ))}
+        </motion.div>
       </section>
 
       <Footer />

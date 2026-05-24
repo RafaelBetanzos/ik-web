@@ -158,9 +158,8 @@ export default function Innovation() {
 
       {/* ── RESEARCH AREAS ────────────────────── */}
       <section className="bg-stone-50 py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12">
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -172,26 +171,24 @@ export default function Innovation() {
               Research Areas
             </h2>
           </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {areas.map((a) => (
-              <AreaCard key={a.number} a={a} />
-            ))}
-          </motion.div>
         </div>
+        <motion.div
+          className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {areas.map((a) => (
+            <AreaCard key={a.number} a={a} />
+          ))}
+        </motion.div>
       </section>
 
       {/* ── FEATURED PROJECT: MOKA BIO ────────── */}
       <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12">
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -203,6 +200,7 @@ export default function Innovation() {
               From Lab to Platform
             </h2>
           </motion.div>
+        </div>
 
           {/* Moka Bio card */}
           <motion.div
@@ -454,7 +452,6 @@ export default function Innovation() {
               </div>
             </div>
           </motion.div>
-        </div>
       </section>
 
       {/* ── CTA ───────────────────────────────── */}

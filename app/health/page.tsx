@@ -154,9 +154,8 @@ export default function Health() {
 
       {/* ── DISCIPLINES ───────────────────────── */}
       <section className="bg-stone-50 py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12">
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -168,26 +167,24 @@ export default function Health() {
               Our Disciplines
             </h2>
           </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {disciplines.map((d) => (
-              <DisciplineCard key={d.number} d={d} />
-            ))}
-          </motion.div>
         </div>
+        <motion.div
+          className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {disciplines.map((d) => (
+            <DisciplineCard key={d.number} d={d} />
+          ))}
+        </motion.div>
       </section>
 
       {/* ── IK-01 FEATURED PRODUCT ────────────── */}
       <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12">
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -199,6 +196,7 @@ export default function Health() {
               In Development
             </h2>
           </motion.div>
+        </div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -272,14 +270,12 @@ export default function Health() {
               </div>
             </div>
           </motion.div>
-        </div>
       </section>
 
       {/* ── FEATURED PROJECT: FUTURA BIO ──────── */}
       <section className="bg-stone-50 py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12">
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -291,6 +287,7 @@ export default function Health() {
               Cosmetics Ventures
             </h2>
           </motion.div>
+        </div>
 
           {/* Futura Bio card */}
           <motion.div
@@ -407,7 +404,6 @@ export default function Health() {
               </div>
             </div>
           </motion.div>
-        </div>
       </section>
 
       {/* ── CTA ───────────────────────────────── */}

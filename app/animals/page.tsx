@@ -155,9 +155,8 @@ export default function Animals() {
 
       {/* ── FOCUS AREAS ───────────────────────── */}
       <section className="bg-stone-50 py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-6 mb-12">
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -169,19 +168,18 @@ export default function Animals() {
               Animal Care
             </h2>
           </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {areas.map((a) => (
-              <AreaCard key={a.number} a={a} />
-            ))}
-          </motion.div>
         </div>
+        <motion.div
+          className="grid grid-cols-1 gap-px bg-stone-100 md:grid-cols-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {areas.map((a) => (
+            <AreaCard key={a.number} a={a} />
+          ))}
+        </motion.div>
       </section>
 
       {/* ── BOND STATEMENT ────────────────────── */}
